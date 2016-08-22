@@ -7,14 +7,21 @@
 
     {% include header.html %}
 
-    <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
-    </div>
+    {{ content }}
 
     {% include footer.html %}
 
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js" crossorigin="anonymous"></script>
+
+    <!-- underscore -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- GitHub API Libaray -->
+    <script src="https://github.com/k33g/gh3/raw/v1.0.3/gh3.js" crossorigin="anonymous"></script>
   </body>
 
 </html>

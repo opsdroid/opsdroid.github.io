@@ -2,22 +2,33 @@
 layout: default
 ---
 
-<div class="home">
+<div class="jumbotron">
+  <div class="container">
+    <h1>Automate boring things!</h1>
+    <p>Introducing opsdroid, a Python 3 chat-ops bot.</p>
+    <p>Open source. Simple to install. Easy to extend.</p>
+    <code>
+      <div>pip3 install opsdroid</div>
+      <div>opsdroid --gen-config > configuration.yaml</div>
+      <div>python -m opsdroid</div>
+    </code>
+  </div>
+</div>
 
-  <h1 class="page-heading">Posts</h1>
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
+<div class="container">
+  <!-- Example row of columns -->
+  <div class="row">
+    <div class="col-md-4">
+      <h2>Connectors</h2>
+      <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+    </div>
+    <div class="col-md-4">
+      <h2>Databases</h2>
+      <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+   </div>
+    <div class="col-md-4">
+      <h2>Skills</h2>
+      <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+    </div>
+  </div>
 </div>
