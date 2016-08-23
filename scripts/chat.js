@@ -3,6 +3,11 @@
   // keep track of when the next message should be displayed
   var timeCounter;
 
+  function pad(num, places) {
+    var zero = places - num.toString().length + 1;
+    return Array(+(zero > 0 && zero)).join("0") + num;
+  }
+
   function uuid(len) {
     // Generate a unique id
     var chars = 'abcdefghijklmnopqrstuvwxyz';
@@ -17,7 +22,7 @@
   function generate_message(user, message, id){
     // generate a message div element to be appended to the chat
     var d = new Date();
-    var time = d.getHours() + ":" + d.getMinutes();
+    var time = d.getHours() + ":" + pad(d.getMinutes(), 2);
     var profile = {"opsdroid": "https://github.com/opsdroid/style-guidelines/raw/master/logos/logo-dark.png",
                    "user": "http://www.gravatar.com/avatar/00000000000000000000000000000000?s=60&d=mm"};
     return "<div id=\"" + id + "\" class=\"message " + user + "\"><img class=\"profile\" src=\"" + profile[user] + "\"><h4>" + user + " <small>" + time + "</small></h4><p>" + message + "</p></div>";

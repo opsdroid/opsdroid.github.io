@@ -6,6 +6,7 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 url: "opsdroid.github.io" # the base hostname & protocol for your site
 twitter_username: opsdroid
 github_username:  opsdroid
+google_analytics: UA-83009564-1
 
 # Build settings
 markdown: kramdown
