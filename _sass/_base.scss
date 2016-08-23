@@ -169,11 +169,26 @@ body {
   }
 
   a:hover {
-    color: lighten($brand-blue, 80%);
+    color: lighten($brand-blue, 60%);
   }
 
+  :after {
+    content: '';
+    display: block;
+    clear: both;
+  }
 }
 
 footer {
+  color: #AAA;
   text-align: center;
+
+  a:link, a:visited, a:active {
+    color: lighten($brand-blue, 30%);
+  }
+
+  a:hover {
+    color: $brand-blue;
+  }
+
 }
