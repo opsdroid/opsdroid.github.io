@@ -1,6 +1,18 @@
 <hr>
 
 <footer>
-  <p>Code and examples licensed under <a href="https://github.com/opsdroid/opsdroid/blob/master/LICENSE">GPLv3</a>, website design and logos under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a>.</p>
-    <p>Otherwise {{ site.time | date: '%Y' }} &copy; <a href="https://github.com/opsdroid">opsdroid</a></p>
+  <div class="row">
+    <div class="col-md-6 social">
+      <a href="https://twitter.com/{{ site.twitter_username }}"><i class="fa fa-twitter"></i></a>
+      <a href="https://github.com/{{ site.github_username }}"><i class="fa fa-github"></i></a>
+      <a href="https://hub.docker.com/u/{{ site.dockerhub_username }}">{% include docker.svg %}</a>
+    </div>
+    <div class="col-md-6 copyright">
+      <p>
+        Code and examples licensed under <a href="https://github.com/opsdroid/opsdroid/blob/master/LICENSE">GPLv3</a>.<br />
+        Website design and logos under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a>.<br />
+        Otherwise {{ site.time | date: '%Y' }} &copy; <a href="https://github.com/opsdroid">opsdroid</a>
+      </p>
+    </div>
+  </div>
 </footer>
