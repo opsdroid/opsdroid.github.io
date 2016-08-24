@@ -2,15 +2,21 @@
 
 <footer>
   <div class="row">
-    <div class="col-md-6 social">
+    <div class="col-md-4 nav">
+      <ul>
+        <li><a href="http://opsdroid.readthedocs.io/en/latest/?badge=latest">Getting Started</a></li>
+        <li><a href="http://opsdroid.readthedocs.io/en/latest/?badge=latest">Documentation</a></li>
+      </ul>
+    </div>
+    <div class="col-md-4 social">
       <a href="https://twitter.com/{{ site.twitter_username }}"><i class="fa fa-twitter"></i></a>
       <a href="https://github.com/{{ site.github_username }}"><i class="fa fa-github"></i></a>
       <a href="https://hub.docker.com/u/{{ site.dockerhub_username }}">{% include docker.svg %}</a>
     </div>
-    <div class="col-md-6 copyright">
+    <div class="col-md-4 copyright">
       <p>
-        Code and examples licensed under <a href="https://github.com/opsdroid/opsdroid/blob/master/LICENSE">GPLv3</a>.<br />
-        Website design and logos under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a>.<br />
+        Code and examples licensed under <a href="https://github.com/opsdroid/opsdroid/blob/master/LICENSE">GPLv3</a><br />
+        Website design and logos under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a><br />
         Otherwise {{ site.time | date: '%Y' }} &copy; <a href="https://github.com/opsdroid">opsdroid</a>
       </p>
     </div>
