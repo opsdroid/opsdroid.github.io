@@ -1,204 +1,284 @@
-/**
- * Reset some basic elements
- */
-body, h1, h2, h3, h4, h5, h6,
-p, blockquote, pre, hr,
-dl, dd, ol, ul, figure {
-    margin: 0;
-    padding: 0;
-}
-
-
-
-/**
- * Basic styling
- */
 body {
-    font-family: $base-font-family;
-    font-size: $base-font-size;
-    line-height: $base-line-height;
-    font-weight: 300;
-    color: $text-color;
-    background-color: $background-color;
-    -webkit-text-size-adjust: 100%;
-}
+  background-color: $background-color;
+  padding-bottom: 20px;
+  overflow-x: hidden;
 
-
-
-/**
- * Set `margin-bottom` to maintain vertical rhythm
- */
-h1, h2, h3, h4, h5, h6,
-p, blockquote, pre,
-ul, ol, dl, figure,
-%vertical-rhythm {
-    margin-bottom: $spacing-unit / 2;
-}
-
-
-
-/**
- * Images
- */
-img {
-    max-width: 100%;
-    vertical-align: middle;
-}
-
-
-
-/**
- * Figures
- */
-figure > img {
-    display: block;
-}
-
-figcaption {
-    font-size: $small-font-size;
-}
-
-
-
-/**
- * Lists
- */
-ul, ol {
-    margin-left: $spacing-unit;
-}
-
-li {
-    > ul,
-    > ol {
-         margin-bottom: 0;
-    }
-}
-
-
-
-/**
- * Headings
- */
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 300;
-}
-
-
-
-/**
- * Links
- */
-a {
-    color: $brand-color;
+  #{$a-tags} {
+    color: $brand-blue;;
     text-decoration: none;
+  }
+  #{$a-tags-hover} {
+    color: darken($brand-blue, 5%);
+  }
+}
 
-    &:visited {
-        color: darken($brand-color, 15%);
+.github-ribbon {
+  background-color: $brand-green;
+  overflow: hidden;
+  white-space: nowrap;
+  /* top left corner */
+  position: absolute;
+  right: -50px;
+  top: 40px;
+  /* 45 deg ccw rotation */
+  -webkit-transform: rotate(45deg);
+     -moz-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+       -o-transform: rotate(45deg);
+          transform: rotate(45deg);
+
+  a:link, a:visited, a:active {
+    border: 1px solid lighten($brand-green, 20%);
+    color: #fff;
+    display: block;
+    font: bold 81.25% 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 1px 0;
+    padding: 10px 50px;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: lighten($brand-green, 50%);
+  }
+}
+
+.navbar {
+  min-height: $nav-height;
+  margin: 0;
+
+  .navbar-brand {
+    height: $nav-height;
+    padding: 5px;
+
+    .logo {
+      height: 100%;
+    }
+  }
+
+  .navbar-nav {
+    font-size: 1.4em;
+    margin-top: 1.6em;
+    margin-right: 50px;
+  }
+}
+
+.jumbotron {
+
+  padding-top: 4em;
+  padding-bottom: 4em;
+  height: 100%;
+
+  color: white;
+  background-color: $brand-blue;
+  background-image: url("https://github.com/opsdroid/style-guidelines/raw/master/banners/banner-eye-dark-trans-offset.png");
+  background-size: cover;
+
+  h1 {
+    font-size: 4rem;
+    margin-top: 0px;
+    margin-bottom: 1em;
+    padding: 0;
+  }
+
+  p {
+    margin: 0px;
+  }
+
+  code {
+    color: white;
+    font-size: 1.2em;
+
+    background-color: darken($brand-blue, 5%);
+    border: none;
+
+    display: inline-block;
+    padding: 20px;
+    margin-top: 3em;
+
+    ::before {
+      color: $brand-green;
+      content: '$ '
+    }
+  }
+
+  .chat-demo {
+    background-color: white;
+    color: black;
+    height: 300px;
+    padding: 0px;
+    border: 2px #b5b5b5 solid;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    overflow-y: hidden;
+
+    .window-ui {
+      height: 24px;
+      width: 100%;
+      background-color: #b5b5b5;
+      border-top-right-radius: 3px;
+      border-top-left-radius: 3px;
+
+      .button {
+        float: left;
+        height: 10px;
+        width: 10px;
+        margin-top: 6px;
+        margin-left: 6px;
+        border-radius: 8px;
+      }
+
+      .quit {
+        background-color: #fa5f5c;
+        border: 1px solid #ed4a47;
+      }
+
+      .minimize {
+        background-color: #fcbb42;
+        border: 1px solid #f0aa32;
+      }
+
+      .maximize {
+        background-color: #36c94a;
+        border: 1px solid #28bd39;
+      }
     }
 
-    &:hover {
-        color: $text-color;
-        text-decoration: underline;
-    }
-}
+    .message {
+      padding: 12px;
+      border-bottom: 1px #EEE solid;
 
+      img.profile {
+        width: 30px;
+        float: left;
+        margin-right: 10px;
+        border-radius: 3px;
+      }
 
+      h4 {
+        margin: 0;
+        margin-bottom: 5px;
+        font-size: 16px;
 
-/**
- * Blockquotes
- */
-blockquote {
-    color: $grey-color;
-    border-left: 4px solid $grey-color-light;
-    padding-left: $spacing-unit / 2;
-    font-size: 18px;
-    letter-spacing: -1px;
-    font-style: italic;
-
-    > :last-child {
-        margin-bottom: 0;
-    }
-}
-
-
-
-/**
- * Code formatting
- */
-pre,
-code {
-    font-size: 15px;
-    border: 1px solid $grey-color-light;
-    border-radius: 3px;
-    background-color: #eef;
-}
-
-code {
-    padding: 1px 5px;
-}
-
-pre {
-    padding: 8px 12px;
-    overflow-x: scroll;
-
-    > code {
-        border: 0;
-        padding-right: 0;
-        padding-left: 0;
-    }
-}
-
-
-
-/**
- * Wrapper
- */
-.wrapper {
-    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
-    max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: $spacing-unit;
-    padding-left: $spacing-unit;
-    @extend %clearfix;
-
-    @include media-query($on-laptop) {
-        max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
-        max-width:         calc(#{$content-width} - (#{$spacing-unit}));
-        padding-right: $spacing-unit / 2;
-        padding-left: $spacing-unit / 2;
-    }
-}
-
-
-
-/**
- * Clearfix
- */
-%clearfix {
-
-    &:after {
-        content: "";
-        display: table;
-        clear: both;
-    }
-}
-
-
-
-/**
- * Icons
- */
-.icon {
-
-    > svg {
-        display: inline-block;
-        width: 16px;
-        height: 16px;
-        vertical-align: middle;
-
-        path {
-            fill: $grey-color;
+        small {
+          color: #777;
+          font-size: 10px;
         }
+      }
+
+      p {
+        font-size: 16px;
+      }
+
     }
+
+    .message:last-of-type {
+      border: none;
+    }
+
+    .message::before{
+      width: 50px;
+      height: 50px;
+      background-image: url('https://github.com/opsdroid/style-guidelines/raw/master/logos/logo-dark.png');
+    }
+
+    .typing {
+      font-size: 12px;
+      color: #777;
+      margin: 10px;
+    }
+  }
+}
+
+.modules {
+
+  a:link, a:visited, a:active {
+    float: left;
+    padding: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    color: white;
+    background-color: $brand-blue;
+    font-size: 16px;
+    white-space: nowrap;
+  }
+
+  a:hover {
+    color: lighten($brand-blue, 60%);
+  }
+
+  :after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+footer {
+  width: 100%;
+  color: #AAA;
+  text-align: center;
+
+  .row {
+    margin: 0px;
+
+    div {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+  }
+
+  a:link, a:visited, a:active {
+    color: #888;
+  }
+
+  a:hover {
+    color: $brand-blue;
+  }
+
+  .nav {
+    text-align: left;
+
+    ul {
+      li {
+        margin-top: 1em;
+        margin-right: 30px;
+        display: inline-block;
+        text-decoration: none;
+        list-style: none;
+      }
+    }
+  }
+
+  .copyright {
+    text-align: right;
+  }
+
+  .social {
+    text-align: center;
+
+    i {
+      margin-right: 20px;
+      font-size: 2em;
+    }
+
+    svg {
+      margin-right: 20px;
+      height: 3em;
+      width: 3em;
+      margin-top: -0.1em;
+      padding-top: 1em;
+
+      #outline {
+        fill: #888;
+      }
+    }
+
+    svg:hover {
+      #outline {
+        fill: $brand-blue;
+      }
+    }
+  }
+
 }

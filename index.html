@@ -1,47 +1,63 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+---
+layout: default
+---
 
-    <title>opsdroid | coming soon</title>
-
-    <!-- Boostrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-    <style>
-      html,
-      body {
-        height: 100%;
-        background-color: #176587;
-      }
-      .wrapper {
-        display: table;
-        width: 100%;
-        height: 100%; /* For at least Firefox */
-        min-height: 100%;
-      }
-      .inner {
-        display: table-cell;
-        vertical-align: middle;
-      }
-      .content {
-        color: white;
-        width: 100%;
-        text-align: center;
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="wrapper">
-      <div class="inner">
-        <div class="content">
-          <img width="100px" class="logo" alt="opsdroid" src="https://github.com/opsdroid/style-guidelines/raw/master/logos/logo-dark.png" />
-          <p>coming soon</p>
+<div class="jumbotron">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h1>Automate boring things!</h1>
+        <p>Introducing opsdroid, a Python 3 chat-ops bot.</p>
+        <p>Open source. Simple to install. Easy to extend.</p>
+        <code>
+          <div>pip3 install opsdroid</div>
+          <div>opsdroid --gen-config > configuration.yaml</div>
+          <div>opsdroid</div>
+        </code>
+      </div>
+      <div class="col-md-6 chat-demo">
+        <div class="window-ui">
+          <span class="button quit"></span>
+          <span class="button minimize"></span>
+          <span class="button maximize"></span>
         </div>
       </div>
     </div>
-  </body>
-</html>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 modules">
+      <h2>Connectors</h2>
+      <p>
+        Connector modules transfer messages between opsdroid and a particular chat service.
+      </p>
+      <p>
+        <a href="https://github.com/opsdroid/connector-slack">Slack</a>
+        <a href="https://github.com/opsdroid/connector-shell">Shell</a>
+      </p>
+    </div>
+    <div class="col-md-4 modules">
+      <h2>Databases</h2>
+      <p>
+        Database modules allow opsdroid to persist information in a database of your choice.
+      </p>
+      <p>
+        <a href="https://github.com/opsdroid/database-mongo">MongoDB</a>
+      </p>
+   </div>
+    <div class="col-md-4 modules">
+      <h2>Skills</h2>
+      <p>
+        Skills are what makes opsdroid tick. They define how opsdroid should respond and what actions to take.
+      </p>
+      <p>
+        <a href="https://github.com/opsdroid/skill-hello">Hello World</a>
+        <a href="https://github.com/opsdroid/skill-seen">Last Seen</a>
+        <a href="https://github.com/opsdroid/skill-dance">Dance</a>
+        <a href="https://github.com/opsdroid/skill-loudnoises">Loud Noises</a>
+      </p>
+    </div>
+  </div>
+</div>
