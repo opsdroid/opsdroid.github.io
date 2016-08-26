@@ -69,6 +69,11 @@ body {
   padding-bottom: 4em;
   height: 100%;
 
+  color: white;
+  background-color: $brand-blue;
+  background-image: url("https://github.com/opsdroid/style-guidelines/raw/master/banners/banner-eye-dark-trans-offset.png");
+  background-size: cover;
+
   h1 {
     font-size: 4rem;
     margin-top: 0px;
@@ -96,9 +101,6 @@ body {
       content: '$ '
     }
   }
-
-  color: white;
-  background-color: $brand-blue;
 
   .chat-demo {
     background-color: white;
