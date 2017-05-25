@@ -24,7 +24,7 @@
     var d = new Date();
     var time = d.getHours() + ":" + pad(d.getMinutes(), 2);
     var profile = {"opsdroid": "https://github.com/opsdroid/style-guidelines/raw/master/logos/logo-dark.png",
-                   "user": "http://www.gravatar.com/avatar/00000000000000000000000000000000?s=60&d=mm"};
+                   "user": "https://www.gravatar.com/avatar/00000000000000000000000000000000?s=60&d=mm"};
     return "<div id=\"" + id + "\" class=\"message " + user + "\"><img class=\"profile\" src=\"" + profile[user] + "\"><h4>" + user + " <small>" + time + "</small></h4><p>" + message + "</p></div>";
   }
 
@@ -66,7 +66,7 @@
       var opsdroidavatar = new Image();
       opsdroidavatar.src = "https://github.com/opsdroid/style-guidelines/raw/master/logos/logo-dark.png"
       var useravatar = new Image();
-      useravatar.src = "http://www.gravatar.com/avatar/00000000000000000000000000000000?s=60&d=mm"
+      useravatar.src = "https://www.gravatar.com/avatar/00000000000000000000000000000000?s=60&d=mm"
 
       // play the chat once and get the length of time the chat will play for
       var interval = play_chat();
