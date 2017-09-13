@@ -21,7 +21,7 @@
     if ( $(".modules").length ) {
 
       // Load repos from GitHub Api
-      $.getJSON( "https://api.github.com/orgs/opsdroid/repos", function( data ) {
+      $.getJSON( "https://api.github.com/orgs/opsdroid/repos?per_page=100", function( data ) {
         var connectors = [];
         var databases = [];
         var skills = [];
