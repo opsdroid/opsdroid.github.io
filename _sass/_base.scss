@@ -61,6 +61,9 @@ body {
     margin-top: 1.6em;
     margin-right: 50px;
   }
+  .navbar-toggle {
+    margin-top: 2em;
+  }
 }
 
 .jumbotron {
@@ -73,6 +76,12 @@ body {
   background-color: $brand-blue;
   background-image: url("https://github.com/opsdroid/style-guidelines/raw/master/banners/banner-eye-dark-trans-offset.png");
   background-size: cover;
+
+  .container:first-child {
+    h1, p {
+      text-align: center;
+    }
+  }
 
   h1 {
     font-size: 4rem;
@@ -96,9 +105,18 @@ body {
     padding: 20px;
     margin-top: 3em;
 
+    transition: .2s ease-in-out;
+    -webkit-transition: .2s ease-in-out;
+
     ::before {
       color: $brand-green;
       content: '$ '
+    }
+
+    @media (max-width: $on-laptop) {
+      display: block;
+      font-size: 1.2em;
+      margin: 3em 3em 0 3em;
     }
   }
 
@@ -111,6 +129,10 @@ body {
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
     overflow-y: hidden;
+
+    @media (max-width: $on-laptop) {
+      margin: 0 15px;
+    }
 
     .window-ui {
       height: 24px;
@@ -238,24 +260,46 @@ footer {
 
   .nav {
     text-align: left;
+    @media (max-width: $on-laptop) {
+      margin-top: 1em;
+      text-align: center;
+    }
 
     ul {
+      @media (max-width: $on-laptop) {
+        -webkit-padding-start: 0;
+      }
       li {
         margin-top: 1em;
         margin-right: 30px;
         display: inline-block;
         text-decoration: none;
         list-style: none;
+        @media (max-width: $on-laptop) {
+          margin: 0;
+          &:first-child {
+            border-right: 1px solid lighten(grey, 10%);
+            padding-right: .3em;
+          }
+        }
       }
     }
   }
 
   .copyright {
     text-align: right;
+    @media (max-width: $on-laptop) {
+      margin-top: 2em;
+      text-align: center;
+    }
   }
 
   .social {
     text-align: center;
+
+    @media (max-width: $on-laptop) {
+      text-align: center;
+    }
 
     i {
       margin-right: 20px;
