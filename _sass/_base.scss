@@ -77,9 +77,16 @@ body {
   background-image: url("https://github.com/opsdroid/style-guidelines/raw/master/banners/banner-eye-dark-trans-offset.png");
   background-size: cover;
 
-  .container:first-child {
-    h1, p {
-      text-align: center;
+
+  .container .col-md-6:first-child {
+    @media (max-width: $on-laptop) {
+      h1, p {
+        text-align: center;
+      }
+      p {
+        margin: auto 10%;
+      }
+
     }
   }
 
@@ -115,8 +122,8 @@ body {
 
     @media (max-width: $on-laptop) {
       display: block;
-      font-size: 1.2em;
-      margin: 3em 3em 0 3em;
+      font-size: 1em;
+      margin: 3em 2em 0 2em;
     }
   }
 
