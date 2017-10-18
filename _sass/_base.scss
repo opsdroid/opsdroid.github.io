@@ -243,6 +243,21 @@ body {
   }
 }
 
+.blog-post {
+  margin-bottom: 10px;
+
+  .date {
+    font-style: italic;
+    margin-bottom: 0px;
+  }
+
+  .link {
+    font-weight: bold;
+    margin-bottom: 0px;
+    font-size: 16px;
+  }
+}
+
 footer {
   width: 100%;
   color: #AAA;
