@@ -215,36 +215,17 @@ body {
 }
 
 .blog-post {
-
-  display: flex;
   margin-bottom: 10px;
-  
-  .number {
-    background-color: $brand-blue;
-    order: 1;
-    width: 40px;
-    height: 40px;
-    text-align: center;
-    vertical-align: middle;
-    line-height: 40px;
-    color: white;
-    font-size: 20px;
+
+  .date {
+    font-style: italic;
+    margin-bottom: 0px;
   }
 
-  .content {
-    order: 2;
-    margin-left: 5px;
-
-    .date {
-      font-style: italic;
-      color: $brand-green;
-      margin-bottom: 0px;
-    }
-
-    .link {
-      font-weight: bold;
-      margin-bottom: 0px;
-    }
+  .link {
+    font-weight: bold;
+    margin-bottom: 0px;
+    font-size: 16px;
   }
 }
 

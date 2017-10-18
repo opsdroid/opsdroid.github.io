@@ -19,15 +19,12 @@
           if ( i < 3 ) {
             var item = response.items[i];
             blog_posts.append("<div class=\"blog-post\">"
-                              + "<div class=\"number\">" + (parseInt(i) + 1).toString() + "</div>"
-                              + "<div class=\"content\">"
-                                + "<p class=\"date\">" + item.pubDate.slice(0,10) + "</p>"
-                                + "<p class=\"link\">"
-                                  + "<a href=\"" + item.link + "\" target=\"_blank\">"
-                                    + item.title
-                                  + "</a>"
-                                + "</p>"
-                              + "</div>"
+                              + "<p class=\"date\">" + item.pubDate.slice(0,10) + "</p>"
+                              + "<p class=\"link\">"
+                                + "<a href=\"" + item.link + "\" target=\"_blank\">"
+                                  + item.title
+                                + "</a>"
+                              + "</p>"
                             + "</div>")
           }
         }
