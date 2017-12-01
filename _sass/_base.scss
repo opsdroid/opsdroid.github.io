@@ -299,7 +299,7 @@ footer {
         list-style: none;
         @media (max-width: $on-laptop) {
           margin: 0;
-          &:first-child {
+          &:not(:last-child) {
             border-right: 1px solid lighten(grey, 10%);
             padding-right: .3em;
           }
