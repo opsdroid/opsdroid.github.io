@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat|Raleway");
+body, html {
+  height: 100%;
+  background-color: #F8F8F8;
+}
+
+body {
+  font-family: 'Raleway';
+  margin: 0;
+}
+
+h1 {
+  color: #22B573;
+  font-weight: bold;
+  font-family: "Montserrat";
+}
+
+@media (min-width: 920px) {
+  .visible-xs {
+    display: none;
+  }
+}
+
+.hidden-xs {
+  display: none;
+}
+
+@media (min-width: 920px) {
+  .hidden-xs {
+    display: block;
+  }
+}
+
+nav {
+  padding: 1vw 0vw 0vw 3vw;
+  background-color: #176587;
+}
+
+@media (min-width: 920px) {
+  nav {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1.5fr 4fr;
+        grid-template-columns: 1.5fr 4fr;
+  }
+}
+
+nav .logo {
+  height: 90px;
+}
+
+nav #collapseBtn {
+  position: relative;
+  background-color: #22B573;
+  border: 0;
+  padding: 8px;
+  border-radius: 4px;
+  float: right;
+  margin: 2rem 1.5rem;
+}
+
+nav #collapseBtn .icon-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  margin: 4px;
+  border-radius: 1px;
+  background-color: white;
+}
+
+nav #collapseBtn:active, nav #collapseBtn:hover, nav #collapseBtn:focus {
+  background-color: #1ea065;
+  outline: 0;
+}
+
+nav #collapse {
+  display: block;
+  -webkit-transition: height .35s ease;
+  transition: height .35s ease;
+}
+
+nav .navigation {
+  display: none;
+  padding: 3vw 3.5vw 5vw 20vw;
+  list-style-type: none;
+  margin: 0;
+  overflow: hidden;
+}
+
+@media (min-width: 920px) {
+  nav .navigation {
+    display: block;
+    padding: 2.5vw 3.5vw;
+  }
+}
+
+nav .navigation li a {
+  display: block;
+  color: white;
+  padding: .4rem;
+  text-decoration: none;
+  font-size: large;
+}
+
+@media (min-width: 920px) {
+  nav .navigation li a {
+    float: right;
+    text-align: center;
+    margin: 0rem .5rem 0rem 0rem;
+    padding: .4rem;
+  }
+}
+
+nav .navigation li a:hover {
+  background-color: #22B573;
+  border-radius: 10px;
+  -webkit-transition: background-color 0.5s ease-out;
+  transition: background-color 0.5s ease-out;
+}
+/*# sourceMappingURL=main.css.map */

@@ -1,55 +1,145 @@
----
-# Only the main Sass file needs front matter (the dashes are enough)
----
-@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Raleway');
 
-$a-tags: 'a, a:active, a:hover, a:visited';
-$a-tags-hover: 'a:active, a:hover';
+// Set up variables
+$colors: (
+  primary: #176587,
+  secondary: #22B573,
+  dark-primary: #185570,
+  dark-secondary: darken(#22B573, 5%),
 
-// Our variables
-$base-font-family:  Helvetica, Arial, sans-serif;
-$base-font-size:    16px;
-$small-font-size:   $base-font-size * 0.875;
-$base-line-height:  1.5;
+  text-color: #333333,
+  light-text-color: #777777,
 
-$nav-height:        100px;
+  background-color: #F8F8F8,
+  grey-color: #F1F1F1,
+  white-color: #FFFF,
+);
 
-$spacing-unit:      30px;
+$padding: 20px;
+$borders: 1px;
+$vertical-spacing: 40px;
 
-// Colours
-$text-color:        #111;
-$background-color:  #ebebeb;
-$brand-blue:        #176587;
-$brand-green:       #22B573;
-
-$grey-color:        #ebebeb;
-
-// Width of the content area
-$content-width:     800px;
-
-$on-palm:           600px;
-$on-laptop:         800px;
+$desktop: 920px;
 
 
-
-// Using media queries with like this:
-// @include media-query($on-palm) {
-//     .wrapper {
-//         padding-right: $spacing-unit / 2;
-//         padding-left: $spacing-unit / 2;
-//     }
-// }
-@mixin media-query($device) {
-    @media screen and (max-width: $device) {
-        @content;
-    }
+ // Create function to use color scheme
+@function color($color-name) {
+  @return map-get($colors, $color-name)
 }
 
+@mixin desktop {
+  @media(min-width: #{$desktop}) {
+    @content
+  }
+}
+
+body, html {
+  height: 100%;
+  background-color: color(background-color);
+}
+
+body {
+  font-family: 'Raleway';
+  margin: 0;
+}
+
+h1 {
+  color: color(secondary);
+  font-weight: bold;
+  font-family: "Montserrat";
+}
+
+// Hide element on big screens
+.visible-xs {
+  @include desktop{
+    display: none;
+  }
+}
+
+.hidden-xs {
+  display: none;
+  @include desktop {
+    display: block;
+  }
+}
+
+nav {
+  padding: 1vw 0vw 0vw 3vw;
+  background-color: color(primary);
+  @include desktop{
+    display: grid;
+    grid-template-columns: 1.5fr 4fr;
+  }
 
 
-// Import partials from `sass_dir` (defaults to `_sass`)
-@import
-        "base",
-        "layout",
-        "syntax-highlighting"
-;
+  .logo {
+    height: 90px;
+  }
+
+  #collapseBtn {
+    position: relative;
+    background-color: color(secondary);
+    border: 0;
+    padding: 8px;
+    border-radius: 4px;
+    float: right;
+    margin: 2rem 1.5rem;
+
+    .icon-bar {
+      display: block;
+      width: 22px;
+      height: 2px;
+      margin: 4px;
+      border-radius: 1px;
+      background-color: white;
+    }
+
+    &:active, &:hover, &:focus {
+      background-color: color(dark-secondary);
+      outline: 0;
+    }
+  }
+
+
+
+  #collapse {
+    display: block;
+    transition: height .35s ease
+  }
+
+  .navigation {
+    display: none;
+    padding: 3vw 3.5vw 5vw 20vw;
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+
+    @include desktop {
+      display: block;
+      padding: 2.5vw 3.5vw;
+    }
+
+    li a {
+      display: block;
+      color: white;
+      padding: .4rem;
+      // margin: 0rem 5.5rem 0rem 0rem;
+      text-decoration: none;
+      font-size: large;
+
+      @include desktop {
+        float: right;
+        text-align: center;
+        margin: 0rem .5rem 0rem 0rem;
+        padding: .4rem;
+      }
+    }
+
+    li a:hover {
+      background-color: color(secondary);
+      border-radius: 10px;
+      transition: background-color 0.5s ease-out;
+    }
+  }
+  
+}
