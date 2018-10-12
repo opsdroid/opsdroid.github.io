@@ -1,7 +1,16 @@
+const collapseBtn = document.getElementById('collapseBtn');
+const navigation = document.getElementsByClassName('navigation');
 
+collapseBtn.addEventListener('click', function(e){
+  collapseBtn.setAttribute('aria-pressed', e.target.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
+  // navigation[0].setAttribute('id', navigation[0].getAttribute('id') === 'collapse' ? '' : 'collapse');
+  navigation[0].setAttribute('style', navigation[0].getAttribute('style') === 'display: block;' ? '' : 'display: block;');
 
-////////////////////////////////////////////////////
-// Script for getting blogposts as found in blog.js
+  
+});
+
+////////////////////////////////////////////////////////////////////////
+// Script for populating latest blog posts from Medium as found in blog.js
 //
 
 (function(){ //begin script
@@ -39,8 +48,8 @@
   });
 })(); // end script
 
-////////////////////////////////////////////////////////////
-// Script for populating module names as found in modules.js
+////////////////////////////////////////////////////////////////////
+// Script for populating modules from GitHub as found in modules.js
 //
 
 (function(){ //begin script
