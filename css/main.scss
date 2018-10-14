@@ -8,7 +8,7 @@ $colors: (
   dark-secondary: darken(#22B573, 5%),
 
   text-color: #333333,
-  light-text-color: #777777,
+  text-light: #777777,
 
   background-color: #F8F8F8,
   grey-color: #F1F1F1,
@@ -46,22 +46,18 @@ body {
     text-align: center;
     margin: .1rem 0rem .1rem;
     @include desktop {
-      text-align: left;
       font-size: 1.1rem;
       letter-spacing: .5px;
     }
   }
 }
 
-h1 {
+h1, h2 {
   text-align: center;
   color: color(secondary);
   font-weight: bold;
   font-family: "Montserrat";
   margin: 0;
-  @include desktop {
-    text-align: left;
-  }
 }
 
 // Hide element on big screens
@@ -78,6 +74,12 @@ h1 {
   }
 }
 
+.side-margin { 
+  @include desktop{
+    margin: 0rem 10rem;
+  }
+}
+
 .sr-only {
   position: absolute;
     width: 1px;
@@ -88,7 +90,6 @@ h1 {
     clip: rect(0, 0, 0, 0);
     border: 0;
 }
-
 
 // Everything related to the navbar is found here
 nav {
@@ -101,7 +102,7 @@ nav {
 
 
   .logo {
-    height: 90px;
+    height: 80px;
   }
 
   #collapseBtn {
@@ -150,7 +151,6 @@ nav {
 
       @include desktop {
         float: right;
-        text-align: center;
         margin: 0rem .5rem 0rem 0rem;
         padding: .4rem;
       }
@@ -165,8 +165,8 @@ nav {
   
 }
 
-// The blue area under the navbar is called header-bottom
-.header-bottom{
+// The blue area under the navbar is called header
+.header{
   position: relative;
   top: -2px;
   background-color: color(primary);
@@ -196,7 +196,14 @@ nav {
         text-shadow: 0px 0px 3px rgba(0, 0,0, 0.4);
         margin-bottom: 1em;
         @include desktop {
+          text-align: left;
           font-size: 2.4rem;
+        }
+      }
+
+      p{
+        @include desktop{
+          text-align: left;
         }
       }
     
@@ -225,7 +232,6 @@ nav {
     
       .github-buttons {
         margin: 2rem 0rem 3rem 0rem;
-        text-align: center;
         @include desktop {
           text-align: left;
         }
@@ -329,11 +335,150 @@ nav {
 }
 
 
-// Related to the middle layer 
-.middle-layer{
+// Header bottom - used for polygon effect
+.header-bottom{
   top: -4px;
   position: relative;
   background-color: color(primary);
   clip-path: polygon(0 0, 100% 0, 100% 80%, 0 97%);
-  padding: 40px 60px 60px;
+  padding: 1rem 1rem 8rem;
+
+  @include desktop {
+    padding: 1rem 1rem 5rem;;
+  }
+}
+
+.middle-layer {
+  padding: 1rem 1rem 3rem 1rem;
+
+  @include desktop {
+    padding: 0;
+  }
+
+  .panel {
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 4px 10px 10px rgba(0, 0,0, 0.05);
+    position: relative;
+    top: -7rem;
+    margin-bottom: -4rem;
+    margin-top: 1rem;
+    padding: 1rem 2rem 2rem 2rem;
+  
+    @include desktop {
+      margin: 0rem 15rem 0rem 10rem;
+      padding: 1rem 2rem 2rem 2rem;
+    }
+  
+    p {
+      color: color(text-light);
+    }
+
+    h2 {
+      margin-block-start: 0.83em;
+      margin-block-end: 0.83em;
+      font-weight: lighter;
+      color: color(text-color)
+    }
+  }
+
+  .modules-intro {
+    text-align: center;
+    font-family: "Montserrat";
+    font-size: 1.3rem;
+
+    @include desktop{
+      margin: -2.5rem;
+    }
+  }
+
+  .modules-area {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-areas: 
+    "connectors"
+    "databases"
+    "parsers"
+    "skills";
+    grid-gap: $padding;
+
+    @include desktop{
+      display: grid;
+      grid-template-areas: 
+      "connectors databases parsers"
+      "skills skills skills";
+      padding: 3rem 4rem 12rem;
+    }
+
+
+    .connectors {
+      grid-area: connectors;
+    }
+
+    .databases {
+      grid-area: databases;
+    }
+
+    .parsers {
+      grid-area: parsers;
+    }
+
+    .skills {
+      grid-area: skills;
+    }
+
+    .modules {
+      background-color: white;
+      box-shadow: 4px 10px 10px rgba(0, 0,0, 0.03);
+      border-radius: 2px;
+      border: 1px solid color(secondary);
+      padding: 2rem;
+      transition: .5s ease-out;
+
+      &:hover {
+        box-shadow: 10px 10px 1px rgba(34, 181, 115, 0.7);
+        transition: box-shadow .5s ease-out;
+      }
+
+      a, :active, a:visited {
+        font-size: medium;
+        float: left;
+        color: color(secondary);
+        border: 1px solid color(secondary);
+        border-radius: 6px;
+        text-decoration: none;
+        text-transform: capitalize;
+        margin:8px 5px 0px 0px;
+        padding: 4px;
+        transition: .7s ease-out;
+      }
+
+      a:hover {
+        background-color: color(secondary);
+        color: white;
+        transition: background-color 1s ease-out;
+      }
+
+      p {
+        padding: 1rem 0rem 0rem;
+        color: color(text-light);
+      }
+    }
+  }
+}
+
+
+
+.grey-background {
+  clip-path: polygon(0 11%, 100% 6%, 100% 85%, 0 90%);
+  top: -67rem;
+  padding-bottom: 77rem;
+  background-color: color(grey-color);
+  z-index: -1;
+  position: relative;
+  @include desktop {
+    clip-path: polygon(0 17%, 100% 6%, 100% 85%, 0 95%);
+    padding: 20rem;
+    top: -43rem;
+  }
 }
