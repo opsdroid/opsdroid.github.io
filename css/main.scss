@@ -128,13 +128,6 @@ nav {
     }
   }
 
-
-
-  #collapse {
-    display: block;
-    transition: height .35s ease
-  }
-
   .navigation {
     display: none;
     padding: 3vw 3.5vw 5vw 20vw;
@@ -200,6 +193,7 @@ nav {
       margin-right: 1rem;
     
       h1 {
+        text-shadow: 0px 0px 3px rgba(0, 0,0, 0.4);
         margin-bottom: 1em;
         @include desktop {
           font-size: 2.4rem;
