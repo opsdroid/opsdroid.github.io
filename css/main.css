@@ -667,7 +667,7 @@ footer .top-footer .download {
 }
 
 footer .top-footer .download p {
-  padding: 1rem .3rem;
+  padding: .7rem .3rem;
 }
 
 footer .top-footer .download a, footer .top-footer .download:visited, footer .top-footer .download:active {
@@ -700,7 +700,7 @@ footer .top-footer .follow {
 }
 
 footer .top-footer .follow p {
-  padding: 1rem .3rem;
+  padding: .0rem .3rem .8rem;
 }
 
 footer .top-footer .follow .social-icons .fab, footer .top-footer .follow .social-icons .fas {
