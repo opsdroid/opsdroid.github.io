@@ -6,7 +6,7 @@ body, html {
 
 @media (min-width: 920px) {
   body, html {
-    min-width: 100%;
+    height: 100%;
   }
 }
 
