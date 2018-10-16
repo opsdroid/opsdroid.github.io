@@ -34,12 +34,12 @@ collapseBtn.addEventListener('click', function(e){
           if ( i < 3 ) {
             var item = response.items[i];
             blog_posts.append("<div class=\"blog-post\">"
-                              + "<p class=\"date\">" + item.pubDate.slice(0,10) + "</p>"
-                              + "<p class=\"link\">"
-                                + "<a href=\"" + item.link + "\" target=\"_blank\">"
-                                  + item.title
-                                + "</a>"
-                              + "</p>"
+                              + "<a href=\"" + item.link + "\" target=\"_blank\">"
+                                + "<p class=\"date\">" + item.pubDate.slice(0,10) + "</p>"
+                                + "<p class=\"link\">"
+                                    + item.title
+                                + "</p>"
+                              + "</a>" 
                             + "</div>")
           }
         }

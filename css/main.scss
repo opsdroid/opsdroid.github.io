@@ -97,6 +97,19 @@ h1, h2 {
   text-shadow: 0px 0px 3px rgba(0, 0,0, 0.4);
 }
 
+.white-text {
+  color: white;
+}
+
+.align-left {
+  text-align: center;
+
+  @include desktop {
+    text-align: left;
+  }
+
+}
+
 .github-corner:hover .octo-arm {
   animation:octocat-wave 560ms ease-in-out
 }
@@ -370,7 +383,7 @@ nav {
   top: -4px;
   position: relative;
   background-color: color(primary);
-  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 97%);
+  clip-path: polygon(0 0, 100% 0, 100% 5%, 0 100%);
   padding: 1rem 1rem 8rem;
 
   @include desktop {
@@ -390,7 +403,7 @@ nav {
     border-radius: 3px;
     box-shadow: 4px 10px 10px rgba(0, 0,0, 0.05);
     position: relative;
-    top: -7rem;
+    top: -8rem;
     margin-bottom: -4rem;
     margin-top: 1rem;
     padding: 1rem 2rem 2rem 2rem;
@@ -506,8 +519,182 @@ nav {
   z-index: -1;
   position: relative;
   @include desktop {
-    clip-path: polygon(0 17%, 100% 6%, 100% 85%, 0 95%);
-    padding: 20rem;
-    top: -43rem;
+    clip-path: polygon(0 14%, 100% 0%, 100% 84%, 0 100%);
+    padding: 22rem;
+    top: -46rem;
+  }
+}
+
+// Footer related rules
+footer {
+    position: relative;
+    top: -40rem;
+
+    a, a:visited, a:active {
+      color: white;
+      text-decoration: none;
+      transition: color 0.5s ease-out;
+    }
+
+     a:hover {
+      color: lighten(color(secondary), 40%);
+      text-shadow: 0px 0px 3px rgba(0, 0,0, 0.4);
+      transition: color 0.5s ease-out;
+    }
+
+  .top-footer {
+    background-color: color(primary);
+    clip-path: polygon(0 18%, 100% 5%, 100% 100%, 0 100%);
+    padding: 9rem 0rem 6rem;
+    display: grid;
+    grid-template-areas:
+    "blog"
+    "app"
+    "follow";
+
+    @include desktop {
+      grid-template-areas: 
+      "blog . app" 
+      "blog . follow";
+      grid-template-columns: repeat(3, 1fr);
+      padding-left: 4rem;
+    }
+
+    .blog-posts {
+      grid-area: blog;
+
+      padding: 3rem 1rem;
+
+      @include desktop {
+        padding: 0rem 9rem 0rem 0rem;
+      }
+
+
+      h1, p, .blog-post {
+        text-align: center;
+        @include desktop {
+          text-align: left;
+        }
+      }
+
+      h1 {
+        padding: 1rem 0rem;
+      }
+
+      .date {
+        color: lighten(color(secondary), 5%);
+        text-shadow: 0px 0px 3px rgba(0, 0,0, 0.4);
+        padding-top: .5rem;
+        transition: color 0.5s ease-out;
+      }
+
+      .blog-post:hover {
+
+        .date {
+          color: lighten(color(secondary), 20%);
+          transition: color 0.5s ease-out;
+        }
+
+      }
+
+    }
+
+    .download {
+      grid-area: app;
+      margin-bottom: 2rem;
+
+      padding: 1rem;
+
+      @include desktop {
+        padding: 0rem;
+      }
+
+      p {
+        padding: 1rem .3rem;
+      }
+
+      a, &:visited, &:active {
+        background-color: color(secondary);
+        border-radius: 4px;
+        padding: .6rem 1rem;
+        transition: all .5s ease-in-out;
+      }
+
+      a:hover {
+        color: white;
+        text-shadow: none;
+        background-color: lighten(color(secondary), 10%);
+        transition: all .5s ease-in-out;
+      }
+    }
+
+    .follow {
+      grid-area: follow;
+
+      padding: 1rem;
+
+      @include desktop {
+        padding: 0rem;
+      }
+
+      p {
+        padding: 1rem .3rem;
+      }
+      
+      .social-icons {
+        
+        .fab, .fas {
+          color: white;
+          background-color: color(secondary);
+          padding: .5rem;
+          border-radius: 4px;
+          margin-right: .1rem;
+        }
+
+        .fas {
+          padding: .5rem 1rem;
+        }
+
+        .fab:hover, .fas:hover {
+          background-color: lighten(color(secondary), 10%);
+          transition: all .5s ease-in-out;
+        }
+      }
+    }
+  }
+
+  .bottom-footer {
+    display: grid;
+    padding: 1rem;
+    margin-top: -2px;
+    color: white;
+    background-color: color(dark-primary);
+    grid-template-columns: 2fr;
+    grid-template-areas:
+    "navigation"
+    "license";
+
+    @include desktop {
+      grid-template-areas: 
+      "navigation license"
+      "navigation license";
+      padding: 2rem 1rem 2rem 4rem;
+    }
+
+    .navigation-footer {
+      grid-area: navigation;
+      padding-bottom: 2rem;
+
+      @include desktop {
+        padding-bottom: 0rem;
+      }
+      a {
+        padding: 0rem .5rem;
+      }
+    }
+
+    .license {
+      grid-area: license;
+    }
   }
 }
