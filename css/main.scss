@@ -428,6 +428,8 @@ nav {
     text-align: center;
     font-family: "Montserrat";
     font-size: 1.3rem;
+    position: sticky;
+    z-index: 2;
 
     @include desktop{
       margin: -2.5rem 0rem;
@@ -443,6 +445,8 @@ nav {
     "parsers"
     "skills";
     grid-gap: $padding;
+    z-index: 2;
+    position: sticky;
 
     @include desktop{
       display: grid;
@@ -512,23 +516,22 @@ nav {
 
 
 .grey-background {
-  clip-path: polygon(0 11%, 100% 6%, 100% 85%, 0 90%);
-  top: -67rem;
-  padding-bottom: 77rem;
+  clip-path: polygon(0 11%, 100% 6%, 100% 84%, 0 94%);
   background-color: color(grey-color);
-  z-index: -1;
-  position: relative;
+  width: 100%;
+  height: 178%;
+  position: absolute;
+  top: 89rem;
   @include desktop {
     clip-path: polygon(0 14%, 100% 0%, 100% 84%, 0 100%);
-    padding: 22rem;
-    top: -46rem;
+    height: 80%;
+    top: 66rem;
   }
 }
 
 // Footer related rules
 footer {
     position: relative;
-    top: -40rem;
 
     a, a:visited, a:active {
       color: white;

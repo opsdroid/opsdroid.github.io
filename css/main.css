@@ -454,6 +454,9 @@ nav .navigation li a:hover {
   text-align: center;
   font-family: "Montserrat";
   font-size: 1.3rem;
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 2;
 }
 
 @media (min-width: 920px) {
@@ -468,6 +471,9 @@ nav .navigation li a:hover {
   display: grid;
       grid-template-areas: "connectors" "databases" "parsers" "skills";
   grid-gap: 20px;
+  z-index: 2;
+  position: -webkit-sticky;
+  position: sticky;
 }
 
 @media (min-width: 920px) {
@@ -550,27 +556,26 @@ nav .navigation li a:hover {
 }
 
 .grey-background {
-  -webkit-clip-path: polygon(0 11%, 100% 6%, 100% 85%, 0 90%);
-          clip-path: polygon(0 11%, 100% 6%, 100% 85%, 0 90%);
-  top: -67rem;
-  padding-bottom: 77rem;
+  -webkit-clip-path: polygon(0 11%, 100% 6%, 100% 84%, 0 94%);
+          clip-path: polygon(0 11%, 100% 6%, 100% 84%, 0 94%);
   background-color: #F1F1F1;
-  z-index: -1;
-  position: relative;
+  width: 100%;
+  height: 178%;
+  position: absolute;
+  top: 89rem;
 }
 
 @media (min-width: 920px) {
   .grey-background {
     -webkit-clip-path: polygon(0 14%, 100% 0%, 100% 84%, 0 100%);
             clip-path: polygon(0 14%, 100% 0%, 100% 84%, 0 100%);
-    padding: 22rem;
-    top: -46rem;
+    height: 80%;
+    top: 66rem;
   }
 }
 
 footer {
   position: relative;
-  top: -40rem;
 }
 
 footer a, footer a:visited, footer a:active {
