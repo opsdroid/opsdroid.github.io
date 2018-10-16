@@ -1,11 +1,17 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat|Raleway");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway");
 body, html {
-  height: 100%;
   background-color: #F8F8F8;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (min-width: 920px) {
+  body, html {
+    min-width: 100%;
+  }
 }
 
 body {
-  font-family: 'Raleway';
+  font-family: 'Raleway',Helvetica,Arial,sans-serif;
   margin: 0;
 }
 
@@ -16,7 +22,6 @@ body p {
 
 @media (min-width: 920px) {
   body p {
-    font-size: 1.1rem;
     letter-spacing: .5px;
   }
 }
@@ -25,7 +30,7 @@ h1, h2 {
   text-align: center;
   color: #22B573;
   font-weight: bold;
-  font-family: "Montserrat";
+  font-family: 'Montserrat', sans-serif;
   margin: 0;
 }
 
@@ -60,6 +65,56 @@ h1, h2 {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
+}
+
+.add-shadow {
+  text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
+}
+
+.github-corner:hover .octo-arm {
+  -webkit-animation: octocat-wave 560ms ease-in-out;
+          animation: octocat-wave 560ms ease-in-out;
+}
+
+@-webkit-keyframes octocat-wave {
+  0%, 100% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  20%, 60% {
+    -webkit-transform: rotate(-25deg);
+            transform: rotate(-25deg);
+  }
+  40%, 80% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
+}
+
+@keyframes octocat-wave {
+  0%, 100% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  20%, 60% {
+    -webkit-transform: rotate(-25deg);
+            transform: rotate(-25deg);
+  }
+  40%, 80% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
+}
+
+@media (max-width: 500px) {
+  .github-corner:hover .octo-arm {
+    -webkit-animation: none;
+            animation: none;
+  }
+  .github-corner .octo-arm {
+    -webkit-animation: octocat-wave 560ms ease-in-out;
+            animation: octocat-wave 560ms ease-in-out;
+  }
 }
 
 nav {
@@ -179,7 +234,6 @@ nav .navigation li a:hover {
 }
 
 .header .header-container .description h1 {
-  text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
   margin-bottom: 1em;
 }
 
@@ -379,7 +433,6 @@ nav .navigation li a:hover {
           margin-block-start: 0.83em;
   -webkit-margin-after: 0.83em;
           margin-block-end: 0.83em;
-  font-weight: lighter;
   color: #333333;
 }
 
@@ -391,7 +444,7 @@ nav .navigation li a:hover {
 
 @media (min-width: 920px) {
   .middle-layer .modules-intro {
-    margin: -2.5rem;
+    margin: -2.5rem 0rem;
   }
 }
 

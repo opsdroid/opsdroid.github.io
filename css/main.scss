@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat|Raleway');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway');
 
 // Set up variables
 $colors: (
@@ -34,19 +34,21 @@ $desktop: 920px;
 }
 
 body, html {
-  height: 100%;
   background-color: color(background-color);
+  -webkit-font-smoothing: antialiased;
+  @include desktop {
+    min-width: 100%;
+  }
 }
 
 body {
-  font-family: 'Raleway';
+  font-family: 'Raleway',Helvetica,Arial,sans-serif;
   margin: 0;
   
   p {
     text-align: center;
     margin: .1rem 0rem .1rem;
     @include desktop {
-      font-size: 1.1rem;
       letter-spacing: .5px;
     }
   }
@@ -56,7 +58,7 @@ h1, h2 {
   text-align: center;
   color: color(secondary);
   font-weight: bold;
-  font-family: "Montserrat";
+  font-family: 'Montserrat', sans-serif;
   margin: 0;
 }
 
@@ -89,6 +91,35 @@ h1, h2 {
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
     border: 0;
+}
+
+.add-shadow {
+  text-shadow: 0px 0px 3px rgba(0, 0,0, 0.4);
+}
+
+.github-corner:hover .octo-arm {
+  animation:octocat-wave 560ms ease-in-out
+}
+@keyframes octocat-wave
+{
+  0%,100% {
+    transform:rotate(0)
+  }
+  20%,60% {
+    transform:rotate(-25deg)
+  }
+  40%,80% {
+    transform:rotate(10deg)
+  }
+}
+@media (max-width:500px)
+{
+  .github-corner:hover .octo-arm {
+    animation:none
+  }
+  .github-corner .octo-arm {
+    animation:octocat-wave 560ms ease-in-out
+  }
 }
 
 // Everything related to the navbar is found here
@@ -193,7 +224,6 @@ nav {
       margin-right: 1rem;
     
       h1 {
-        text-shadow: 0px 0px 3px rgba(0, 0,0, 0.4);
         margin-bottom: 1em;
         @include desktop {
           text-align: left;
@@ -377,7 +407,6 @@ nav {
     h2 {
       margin-block-start: 0.83em;
       margin-block-end: 0.83em;
-      font-weight: lighter;
       color: color(text-color)
     }
   }
@@ -388,7 +417,7 @@ nav {
     font-size: 1.3rem;
 
     @include desktop{
-      margin: -2.5rem;
+      margin: -2.5rem 0rem;
     }
   }
 
