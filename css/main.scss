@@ -1,55 +1,703 @@
----
-# Only the main Sass file needs front matter (the dashes are enough)
----
-@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway');
 
-$a-tags: 'a, a:active, a:hover, a:visited';
-$a-tags-hover: 'a:active, a:hover';
+// Set up variables
+$colors: (
+  primary: #176587,
+  secondary: #22B573,
+  dark-primary: #185570,
+  dark-secondary: darken(#22B573, 5%),
 
-// Our variables
-$base-font-family:  Helvetica, Arial, sans-serif;
-$base-font-size:    16px;
-$small-font-size:   $base-font-size * 0.875;
-$base-line-height:  1.5;
+  text-color: #333333,
+  text-light: #777777,
 
-$nav-height:        100px;
+  background-color: #F8F8F8,
+  grey-color: #F1F1F1,
+  white-color: #FFFF,
+);
 
-$spacing-unit:      30px;
+$padding: 20px;
+$borders: 1px;
+$vertical-spacing: 40px;
 
-// Colours
-$text-color:        #111;
-$background-color:  #ebebeb;
-$brand-blue:        #176587;
-$brand-green:       #22B573;
-
-$grey-color:        #ebebeb;
-
-// Width of the content area
-$content-width:     800px;
-
-$on-palm:           600px;
-$on-laptop:         800px;
+$desktop: 920px;
 
 
+ // Create function to use color scheme
+@function color($color-name) {
+  @return map-get($colors, $color-name)
+}
 
-// Using media queries with like this:
-// @include media-query($on-palm) {
-//     .wrapper {
-//         padding-right: $spacing-unit / 2;
-//         padding-left: $spacing-unit / 2;
-//     }
-// }
-@mixin media-query($device) {
-    @media screen and (max-width: $device) {
-        @content;
+@mixin desktop {
+  @media(min-width: #{$desktop}) {
+    @content
+  }
+}
+
+body, html {
+  background-color: color(background-color);
+  -webkit-font-smoothing: antialiased;
+  @include desktop {
+    height: 100%;
+  }
+}
+
+body {
+  font-family: 'Raleway',Helvetica,Arial,sans-serif;
+  margin: 0;
+  
+  p {
+    text-align: center;
+    margin: .1rem 0rem .1rem;
+    @include desktop {
+      letter-spacing: .5px;
     }
+  }
+}
+
+h1, h2 {
+  text-align: center;
+  color: color(secondary);
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+}
+
+// Hide element on big screens
+.visible-xs {
+  @include desktop{
+    display: none;
+  }
+}
+
+.hidden-xs {
+  display: none;
+  @include desktop {
+    display: block;
+  }
+}
+
+.side-margin { 
+  @include desktop{
+    margin: 0rem 10rem;
+  }
+}
+
+.sr-only {
+  position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.add-shadow {
+  text-shadow: 0px 0px 3px rgba(0, 0,0, 0.4);
+}
+
+.white-text {
+  color: white;
+}
+
+.align-left {
+  text-align: center;
+
+  @include desktop {
+    text-align: left;
+  }
+
+}
+
+.github-corner:hover .octo-arm {
+  animation:octocat-wave 560ms ease-in-out
+}
+@keyframes octocat-wave
+{
+  0%,100% {
+    transform:rotate(0)
+  }
+  20%,60% {
+    transform:rotate(-25deg)
+  }
+  40%,80% {
+    transform:rotate(10deg)
+  }
+}
+@media (max-width:500px)
+{
+  .github-corner:hover .octo-arm {
+    animation:none
+  }
+  .github-corner .octo-arm {
+    animation:octocat-wave 560ms ease-in-out
+  }
+}
+
+// Everything related to the navbar is found here
+nav {
+  padding: 1vw 0vw 0vw 3vw;
+  background-color: color(primary);
+  @include desktop{
+    display: grid;
+    grid-template-columns: 1.5fr 4fr;
+  }
+
+
+  .logo {
+    height: 80px;
+  }
+
+  #collapseBtn {
+    position: relative;
+    background-color: color(secondary);
+    border: 0;
+    padding: 8px;
+    border-radius: 4px;
+    float: right;
+    margin: 2rem 1.5rem;
+
+    .icon-bar {
+      display: block;
+      width: 22px;
+      height: 2px;
+      margin: 4px;
+      border-radius: 1px;
+      background-color: white;
+    }
+
+    &:active, &:hover, &:focus {
+      background-color: color(dark-secondary);
+      outline: 0;
+    }
+  }
+
+  .navigation {
+    display: none;
+    padding: 3vw 3.5vw 5vw 20vw;
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+
+    @include desktop {
+      display: block;
+      padding: 2.5vw 3.5vw;
+    }
+
+    li a {
+      display: block;
+      color: white;
+      padding: .4rem;
+      // margin: 0rem 5.5rem 0rem 0rem;
+      text-decoration: none;
+      font-size: large;
+
+      @include desktop {
+        float: right;
+        margin: 0rem .5rem 0rem 0rem;
+        padding: .4rem;
+      }
+    }
+
+    li a:hover {
+      background-color: color(secondary);
+      border-radius: 10px;
+      transition: background-color 0.5s ease-out;
+    }
+  }
+  
+}
+
+// The blue area under the navbar is called header
+.header{
+  position: relative;
+  top: -2px;
+  background-color: color(primary);
+  color: white;
+  background-image: url(../images/banner-eye-dark-trans-offset.png);
+  background-size: cover;
+  padding: 3rem 1rem 1rem;
+  @include desktop {
+    top: 0px;
+    height: 40%;
+    padding: 3rem 4rem 12rem;
+  }
+
+  .header-container {
+    display: grid;
+    @include desktop {
+      grid-template-areas: "description chat-demo";
+      grid-template-columns: 3fr 3fr;
+    }
+  
+    // Left side of header
+    .description {
+      grid-area: "description";
+      margin-right: 1rem;
+    
+      h1 {
+        margin-bottom: 1em;
+        @include desktop {
+          text-align: left;
+          font-size: 2.4rem;
+        }
+      }
+
+      p{
+        @include desktop{
+          text-align: left;
+        }
+      }
+    
+      code ::before {
+        color: color(secondary);
+        content: "$ ";
+      }
+    
+      code {
+        margin: 2rem 3rem 0rem 3rem;
+        width: 65%;
+        background-color: color(dark-primary);
+        border-color: color(secondary);
+        border-style: solid;
+        border-width: 1px;
+        border-radius: 4px;
+        font-size: 1.2rem;
+        display: inline-block;
+        padding: $padding;
+    
+        @include desktop {
+          margin: 2rem 0rem 0rem 0rem;
+          font-size: 1.4rem;
+        }
+      }
+    
+      .github-buttons {
+        margin: 2rem 0rem 3rem 0rem;
+        @include desktop {
+          text-align: left;
+        }
+      }
+    }
+  
+    // Right side of the header
+    .chat-demo {
+      grid-area: "chat-demo";
+      background-color: white;
+      color: black;
+      height: 313px;
+      padding: 0px;
+      border: 2px #b5b5b5 solid;
+      margin-top: 2rem;
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px;
+      overflow-y: hidden;
+      
+      @include desktop {
+        width: 90%;
+      }
+  
+      .window-ui {
+        height: 24px;
+        width: 100%;
+        background-color: #b5b5b5;
+        border-top-right-radius: 3px;
+        border-top-left-radius: 3px;
+  
+        .button {
+          float: left;
+          height: 10px;
+          width: 10px;
+          margin-top: 6px;
+          margin-left: 6px;
+          border-radius: 8px;
+        }
+  
+        .quit {
+          background-color: #fa5f5c;
+          border: 1px solid #ed4a47;
+        }
+  
+        .minimize {
+          background-color: #fcbb42;
+          border: 1px solid #f0aa32;
+        }
+  
+        .maximize {
+          background-color: #36c94a;
+          border: 1px solid #28bd39;
+        }
+      }
+  
+      .message {
+        padding: 12px;
+        border-bottom: 1px #EEE solid;
+  
+        img.profile {
+          width: 30px;
+          float: left;
+          margin-right: 10px;
+          border-radius: 3px;
+        }
+  
+        h4 {
+          margin: 0;
+          margin-bottom: 5px;
+          font-size: 16px;
+  
+          small {
+            color: #777;
+            font-size: 10px;
+          }
+        }
+  
+        p {
+          text-align: left;
+          font-size: 14px;
+        }
+      }
+  
+      .message:last-of-type {
+        border: none;
+      }
+  
+      .message::before{
+        width: 50px;
+        height: 50px;
+        background-image: url('../images/logo-dark.png');
+      }
+  
+      .typing {
+        font-size: 12px;
+        color: #777;
+        margin: 10px;
+      }
+    }
+  }
+}
+
+
+// Header bottom - used for polygon effect
+.header-bottom{
+  top: -4px;
+  position: relative;
+  background-color: color(primary);
+  clip-path: polygon(0 0, 100% 0, 100% 5%, 0 100%);
+  padding: 1rem 1rem 8rem;
+
+  @include desktop {
+    padding: 1rem 1rem 5rem;;
+  }
+}
+
+.middle-layer {
+  padding: 1rem 1rem 3rem 1rem;
+
+  @include desktop {
+    padding: 0;
+  }
+
+  .panel {
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 4px 10px 10px rgba(0, 0,0, 0.05);
+    position: relative;
+    top: -8rem;
+    margin-bottom: -4rem;
+    margin-top: 1rem;
+    padding: 1rem 2rem 2rem 2rem;
+  
+    @include desktop {
+      margin: 0rem 15rem 0rem 10rem;
+      padding: 1rem 2rem 2rem 2rem;
+    }
+  
+    p {
+      color: color(text-light);
+    }
+
+    h2 {
+      margin-block-start: 0.83em;
+      margin-block-end: 0.83em;
+      color: color(text-color)
+    }
+  }
+
+  .modules-intro {
+    text-align: center;
+    font-family: "Montserrat";
+    font-size: 1.3rem;
+    position: sticky;
+    z-index: 2;
+
+    @include desktop{
+      margin: -2.5rem 0rem;
+    }
+  }
+
+  .modules-area {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-areas: 
+    "connectors"
+    "databases"
+    "parsers"
+    "skills";
+    grid-gap: $padding;
+    z-index: 2;
+    position: sticky;
+
+    @include desktop{
+      display: grid;
+      grid-template-areas: 
+      "connectors databases parsers"
+      "skills skills skills";
+      padding: 3rem 4rem 12rem;
+    }
+
+
+    .connectors {
+      grid-area: connectors;
+    }
+
+    .databases {
+      grid-area: databases;
+    }
+
+    .parsers {
+      grid-area: parsers;
+    }
+
+    .skills {
+      grid-area: skills;
+    }
+
+    .modules {
+      background-color: white;
+      box-shadow: 4px 10px 10px rgba(0, 0,0, 0.03);
+      border-radius: 2px;
+      border: 1px solid color(secondary);
+      padding: 2rem;
+      transition: .5s ease-out;
+
+      &:hover {
+        box-shadow: 10px 10px 1px rgba(34, 181, 115, 0.7);
+        transition: box-shadow .5s ease-out;
+      }
+
+      a, :active, a:visited {
+        font-size: medium;
+        float: left;
+        color: color(secondary);
+        border: 1px solid color(secondary);
+        border-radius: 6px;
+        text-decoration: none;
+        text-transform: capitalize;
+        margin:8px 5px 0px 0px;
+        padding: 4px;
+        transition: .7s ease-out;
+      }
+
+      a:hover {
+        background-color: color(secondary);
+        color: white;
+        transition: background-color 1s ease-out;
+      }
+
+      p {
+        padding: 1rem 0rem 0rem;
+        color: color(text-light);
+      }
+    }
+  }
 }
 
 
 
-// Import partials from `sass_dir` (defaults to `_sass`)
-@import
-        "base",
-        "layout",
-        "syntax-highlighting"
-;
+.grey-background {
+  clip-path: polygon(0 11%, 100% 6%, 100% 84%, 0 94%);
+  background-color: color(grey-color);
+  width: 100%;
+  height: 178%;
+  position: absolute;
+  top: 89rem;
+  @include desktop {
+    clip-path: polygon(0 14%, 100% 0%, 100% 84%, 0 100%);
+    height: 80%;
+    top: 66rem;
+  }
+}
+
+// Footer related rules
+footer {
+    position: relative;
+
+    a, a:visited, a:active {
+      color: white;
+      text-decoration: none;
+      transition: color 0.5s ease-out;
+    }
+
+     a:hover {
+      color: lighten(color(secondary), 40%);
+      text-shadow: 0px 0px 3px rgba(0, 0,0, 0.4);
+      transition: color 0.5s ease-out;
+    }
+
+  .top-footer {
+    background-color: color(primary);
+    clip-path: polygon(0 18%, 100% 5%, 100% 100%, 0 100%);
+    padding: 9rem 0rem 6rem;
+    display: grid;
+    grid-template-areas:
+    "blog"
+    "app"
+    "follow";
+
+    @include desktop {
+      grid-template-areas: 
+      "blog . app" 
+      "blog . follow";
+      grid-template-columns: repeat(3, 1fr);
+      padding-left: 4rem;
+    }
+
+    .blog-posts {
+      grid-area: blog;
+
+      padding: 3rem 1rem;
+
+      @include desktop {
+        padding: 0rem 9rem 0rem 0rem;
+      }
+
+
+      h1, p, .blog-post {
+        text-align: center;
+        @include desktop {
+          text-align: left;
+        }
+      }
+
+      h1 {
+        padding: 1rem 0rem;
+      }
+
+      .date {
+        color: lighten(color(secondary), 5%);
+        text-shadow: 0px 0px 3px rgba(0, 0,0, 0.4);
+        padding-top: .5rem;
+        transition: color 0.5s ease-out;
+      }
+
+      .blog-post:hover {
+
+        .date {
+          color: lighten(color(secondary), 20%);
+          transition: color 0.5s ease-out;
+        }
+
+      }
+
+    }
+
+    .download {
+      grid-area: app;
+      margin-bottom: 2rem;
+
+      padding: 1rem;
+
+      @include desktop {
+        padding: 0rem;
+      }
+
+      p {
+        padding: .7rem .3rem;
+      }
+
+      a, &:visited, &:active {
+        background-color: color(secondary);
+        border-radius: 4px;
+        padding: .6rem 1rem;
+        transition: all .5s ease-in-out;
+      }
+
+      a:hover {
+        color: white;
+        text-shadow: none;
+        background-color: lighten(color(secondary), 10%);
+        transition: all .5s ease-in-out;
+      }
+    }
+
+    .follow {
+      grid-area: follow;
+
+      padding: 1rem;
+
+      @include desktop {
+        padding: 0rem;
+      }
+
+      p {
+        padding: .0rem .3rem .8rem;
+      }
+      
+      .social-icons {
+        
+        .fab, .fas {
+          color: white;
+          background-color: color(secondary);
+          padding: .5rem;
+          border-radius: 4px;
+          margin-right: .1rem;
+        }
+
+        .fas {
+          padding: .5rem 1rem;
+        }
+
+        .fab:hover, .fas:hover {
+          background-color: lighten(color(secondary), 10%);
+          transition: all .5s ease-in-out;
+        }
+      }
+    }
+  }
+
+  .bottom-footer {
+    display: grid;
+    padding: 1rem;
+    margin-top: -2px;
+    color: white;
+    background-color: color(dark-primary);
+    grid-template-columns: 2fr;
+    grid-template-areas:
+    "navigation"
+    "license";
+
+    @include desktop {
+      grid-template-areas: 
+      "navigation license"
+      "navigation license";
+      padding: 2rem 1rem 2rem 4rem;
+    }
+
+    .navigation-footer {
+      grid-area: navigation;
+      padding-bottom: 2rem;
+
+      @include desktop {
+        padding-bottom: 0rem;
+      }
+      a {
+        padding: 0rem .3rem;
+      }
+    }
+
+    .license {
+      grid-area: license;
+    }
+  }
+}

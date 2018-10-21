@@ -2,57 +2,78 @@
 layout: default
 ---
 
-<div class="jumbotron">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-        <h1>Automate boring things!</h1>
-        <p>Introducing opsdroid, a Python 3 chat-ops bot.</p>
-        <p>Open source. Simple to install. Easy to extend.</p>
-        <code>
-          <div>pip3 install opsdroid</div>
-          <div>opsdroid</div>
-        </code>
-        <p class="github-buttons">
-          <a class="github-button" href="https://github.com/opsdroid/opsdroid" data-size="large" data-show-count="true" aria-label="Star opsdroid/opsdroid on GitHub">Star</a>
-          <a class="github-button" href="https://github.com/opsdroid/opsdroid/fork" data-size="large" data-show-count="true" aria-label="Fork opsdroid/opsdroid on GitHub">Fork</a>
-        </p>
-      </div>
-      <div class="col-md-6 chat-demo">
-        <div class="window-ui">
-          <span class="button quit"></span>
-          <span class="button minimize"></span>
-          <span class="button maximize"></span>
-        </div>
+<div class="header">
+  <div class="header-container">
+    <div class="description">
+      <h1 class="add-shadow">Automate boring things!</h1>
+      <p>Introducing opsdroid, a Python 3 chat-ops bot.</p>
+      <p>Open source. Simple to install. Easy to extend.</p>
+      <code>
+        <div>pip3 install opsdroid</div>
+        <div>opsdroid</div>
+      </code>
+      <p class="github-buttons">
+        <a class="github-button" href="https://github.com/opsdroid/opsdroid" data-size="large" data-show-count="true" aria-label="Star opsdroid/opsdroid on GitHub">Star</a>
+        <a class="github-button" href="https://github.com/opsdroid/opsdroid/fork" data-size="large" data-show-count="true" aria-label="Fork opsdroid/opsdroid on GitHub">Fork</a>
+      </p>
+    </div>
+    <div class="chat-demo">
+      <div class="window-ui">
+        <span class="button quit"></span>
+        <span class="button minimize"></span>
+        <span class="button maximize"></span>
       </div>
     </div>
   </div>
 </div>
+<div class="header-bottom"></div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-3">
-      <h2>Latest Posts</h2>
-      <p>
-        Find out the latest news for opsdroid on the <a href="https://medium.com/opsdroid">blog</a>.
-      </p>
-      <p class="blog-posts"></p>
-    </div>
-    <div class="col-md-3 modules">
+<div class="middle-layer">
+  <div class="panel">
+    <h2>Open Source, extendable, scalable and simple</h2>
+    <p>Designed to take messages from chat services and execute python functions (skills) based on their contents.</p>
+  </div>
+
+  <h3 class="modules-intro">All your needs in one single app</h3>
+
+  <div class="modules-area">
+    <div class="modules connectors">
       <h2>Connectors</h2>
       <p>
         Connector modules transfer messages between opsdroid and a particular chat service.
       </p>
+    
       <p id="connectors"></p>
     </div>
-    <div class="col-md-3 modules">
+  
+    <div class="modules databases">
       <h2>Databases</h2>
       <p>
         Database modules allow opsdroid to persist information in a database of your choice.
       </p>
       <p id="databases"></p>
    </div>
-    <div class="col-md-3 modules">
+  
+   <div class="modules parsers">
+    <h2>Parsers</h2>
+    <p>
+      Parsers/Matchers modules gather meaning of what was said and match a skill.
+    </p>
+    <p id="parsers">
+      <a href="https://opsdroid.readthedocs.io/en/latest/matchers/regex/" title="Matcher Regex">Regex</a>
+      <a href="https://opsdroid.readthedocs.io/en/latest/matchers/rasanlu/" title="Matcher Rasa">Rasa</a>
+      <a href="https://opsdroid.readthedocs.io/en/latest/matchers/dialogflow/" title="Matcher Dialogflow">Dialogflow</a>
+      <a href="https://opsdroid.readthedocs.io/en/latest/matchers/luis.ai/" title="Matcher LuisAI">Luis.AI</a>
+      <a href="https://opsdroid.readthedocs.io/en/latest/matchers/wit.ai/" title="Matcher WitAI">Wit.ai</a>
+      <a href="https://opsdroid.readthedocs.io/en/latest/matchers/crontab/" title="Matcher Crontab">Crontab</a>
+      <a href="https://opsdroid.readthedocs.io/en/latest/matchers/webhook/" title="Matcher Webhook">Webhook</a>
+      <a href="https://opsdroid.readthedocs.io/en/latest/matchers/always/" title="Matcher Always">Always</a>
+      <a href="https://opsdroid.readthedocs.io/en/latest/matchers/recast.ai/" title="Matcher RecastAI">Recast.AI</a>
+
+    </p>
+    </div>
+
+    <div class="modules skills side-margin">
       <h2>Skills</h2>
       <p>
         Skills are what makes opsdroid tick. They define how opsdroid should respond and what actions to take.
@@ -61,3 +82,5 @@ layout: default
     </div>
   </div>
 </div>
+
+<div class="grey-background"></div>
