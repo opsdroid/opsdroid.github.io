@@ -533,7 +533,7 @@ nav .navigation li a:hover {
   transition: box-shadow .5s ease-out, -webkit-box-shadow .5s ease-out;
 }
 
-.middle-layer .modules-area .modules a, .middle-layer .modules-area .modules :active, .middle-layer .modules-area .modules a:visited {
+.middle-layer .modules-area .modules a, .middle-layer .modules-area .modules a:active, .middle-layer .modules-area .modules a:visited {
   font-size: medium;
   float: left;
   color: #22B573;
