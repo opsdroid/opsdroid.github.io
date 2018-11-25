@@ -28,7 +28,7 @@ body p {
 
 h1, h2 {
   text-align: center;
-  color: #22B573;
+  color: #30D48B;
   font-weight: bold;
   font-family: 'Montserrat', sans-serif;
   margin: 0;
@@ -151,7 +151,7 @@ nav .logo {
 
 nav #collapseBtn {
   position: relative;
-  background-color: #22B573;
+  background-color: #30D48B;
   border: 0;
   padding: 8px;
   border-radius: 4px;
@@ -169,7 +169,7 @@ nav #collapseBtn .icon-bar {
 }
 
 nav #collapseBtn:active, nav #collapseBtn:hover, nav #collapseBtn:focus {
-  background-color: #1ea065;
+  background-color: #22B573;
   outline: 0;
 }
 
@@ -205,7 +205,7 @@ nav .navigation li a {
 }
 
 nav .navigation li a:hover {
-  background-color: #22B573;
+  background-color: #30D48B;
   border-radius: 10px;
   -webkit-transition: background-color 0.5s ease-out;
   transition: background-color 0.5s ease-out;
@@ -265,7 +265,7 @@ nav .navigation li a:hover {
 }
 
 .header .header-container .description code ::before {
-  color: #22B573;
+  color: #30D48B;
   content: "$ ";
 }
 
@@ -273,7 +273,7 @@ nav .navigation li a:hover {
   margin: 2rem 3rem 0rem 3rem;
   width: 65%;
   background-color: #185570;
-  border-color: #22B573;
+  border-color: #30D48B;
   border-style: solid;
   border-width: 1px;
   border-radius: 4px;
@@ -485,6 +485,10 @@ nav .navigation li a:hover {
   }
 }
 
+.middle-layer .modules-area h2 {
+  color: #22B573;
+}
+
 .middle-layer .modules-area .connectors {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
@@ -586,7 +590,7 @@ footer a, footer a:visited, footer a:active {
 }
 
 footer a:hover {
-  color: #b2f1d5;
+  color: #d9f7ea;
   text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
   -webkit-transition: color 0.5s ease-out;
   transition: color 0.5s ease-out;
@@ -639,7 +643,7 @@ footer .top-footer .blog-posts h1 {
 }
 
 footer .top-footer .blog-posts .date {
-  color: #26ca81;
+  color: #45d897;
   text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
   padding-top: .5rem;
   -webkit-transition: color 0.5s ease-out;
@@ -647,7 +651,7 @@ footer .top-footer .blog-posts .date {
 }
 
 footer .top-footer .blog-posts .blog-post:hover .date {
-  color: #5de0a5;
+  color: #84e6ba;
   -webkit-transition: color 0.5s ease-out;
   transition: color 0.5s ease-out;
 }
@@ -671,7 +675,7 @@ footer .top-footer .download p {
 }
 
 footer .top-footer .download a, footer .top-footer .download:visited, footer .top-footer .download:active {
-  background-color: #22B573;
+  background-color: #30D48B;
   border-radius: 4px;
   padding: .6rem 1rem;
   -webkit-transition: all .5s ease-in-out;
@@ -681,7 +685,7 @@ footer .top-footer .download a, footer .top-footer .download:visited, footer .to
 footer .top-footer .download a:hover {
   color: white;
   text-shadow: none;
-  background-color: #32d88e;
+  background-color: #5adda3;
   -webkit-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
 }
@@ -705,7 +709,7 @@ footer .top-footer .follow p {
 
 footer .top-footer .follow .social-icons .fab, footer .top-footer .follow .social-icons .fas {
   color: white;
-  background-color: #22B573;
+  background-color: #30D48B;
   padding: .5rem;
   border-radius: 4px;
   margin-right: .1rem;
@@ -716,7 +720,7 @@ footer .top-footer .follow .social-icons .fas {
 }
 
 footer .top-footer .follow .social-icons .fab:hover, footer .top-footer .follow .social-icons .fas:hover {
-  background-color: #32d88e;
+  background-color: #5adda3;
   -webkit-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
 }
