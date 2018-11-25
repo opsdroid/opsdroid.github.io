@@ -620,7 +620,7 @@ footer {
         padding: .7rem .3rem;
       }
 
-      a, &:visited, &:active {
+      a, a:visited, a:active {
         background-color: color(secondary);
         border-radius: 4px;
         padding: .6rem 1rem;
@@ -630,7 +630,7 @@ footer {
       a:hover {
         color: white;
         text-shadow: none;
-        background-color: lighten(color(secondary), 10%);
+        background-color: color(dark-secondary);
         transition: all .5s ease-in-out;
       }
     }
@@ -663,7 +663,7 @@ footer {
         }
 
         .fab:hover, .fas:hover {
-          background-color: lighten(color(secondary), 10%);
+          background-color: color(dark-secondary);
           transition: all .5s ease-in-out;
         }
       }

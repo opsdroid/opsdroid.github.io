@@ -674,7 +674,7 @@ footer .top-footer .download p {
   padding: .7rem .3rem;
 }
 
-footer .top-footer .download a, footer .top-footer .download:visited, footer .top-footer .download:active {
+footer .top-footer .download a, footer .top-footer .download a:visited, footer .top-footer .download a:active {
   background-color: #30D48B;
   border-radius: 4px;
   padding: .6rem 1rem;
@@ -685,7 +685,7 @@ footer .top-footer .download a, footer .top-footer .download:visited, footer .to
 footer .top-footer .download a:hover {
   color: white;
   text-shadow: none;
-  background-color: #5adda3;
+  background-color: #22B573;
   -webkit-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
 }
@@ -720,7 +720,7 @@ footer .top-footer .follow .social-icons .fas {
 }
 
 footer .top-footer .follow .social-icons .fab:hover, footer .top-footer .follow .social-icons .fas:hover {
-  background-color: #5adda3;
+  background-color: #22B573;
   -webkit-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
 }
