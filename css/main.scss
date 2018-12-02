@@ -480,26 +480,19 @@ nav {
     .modules {
       background-color: white;
       box-shadow: 4px 10px 10px rgba(0, 0,0, 0.03);
-      border-radius: 2px;
-      border: 1px solid color(dark-secondary);
+      border-radius: 3px;
       padding: 2rem;
-      transition: .5s ease-out;
-
-      &:hover {
-        box-shadow: 10px 10px 1px rgba(34, 181, 115, 0.7);
-        transition: box-shadow .5s ease-out;
-      }
 
       a, a:active, a:visited {
         font-size: medium;
         float: left;
         color: color(dark-secondary);
-        border: 1px solid color(dark-secondary);
+        box-shadow: -1px 1px 6px rgba(0, 0,0, 0.03);
         border-radius: 6px;
         text-decoration: none;
         text-transform: capitalize;
         margin:8px 5px 0px 0px;
-        padding: 4px;
+        padding: 5px;
         transition: .7s ease-out;
       }
 
