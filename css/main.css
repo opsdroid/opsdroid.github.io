@@ -525,8 +525,9 @@ nav .navigation li a:hover {
   font-size: medium;
   float: left;
   color: #22B573;
-  -webkit-box-shadow: -1px 1px 6px rgba(0, 0, 0, 0.03);
-          box-shadow: -1px 1px 6px rgba(0, 0, 0, 0.03);
+  background-color: rgba(0, 0, 0, 0.01);
+  -webkit-box-shadow: -1px 1px 6px rgba(0, 0, 0, 0.08);
+          box-shadow: -1px 1px 6px rgba(0, 0, 0, 0.08);
   border-radius: 6px;
   text-decoration: none;
   text-transform: capitalize;
