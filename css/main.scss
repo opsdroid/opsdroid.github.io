@@ -3,9 +3,9 @@
 // Set up variables
 $colors: (
   primary: #176587,
-  secondary: #22B573,
+  secondary: #30D48B,
   dark-primary: #185570,
-  dark-secondary: darken(#22B573, 5%),
+  dark-secondary: #22B573,
 
   text-color: #333333,
   text-light: #777777,
@@ -456,6 +456,10 @@ nav {
       padding: 3rem 4rem 12rem;
     }
 
+    h2 {
+      color: color(dark-secondary);
+    }
+
 
     .connectors {
       grid-area: connectors;
@@ -476,31 +480,25 @@ nav {
     .modules {
       background-color: white;
       box-shadow: 4px 10px 10px rgba(0, 0,0, 0.03);
-      border-radius: 2px;
-      border: 1px solid color(secondary);
+      border-radius: 3px;
       padding: 2rem;
-      transition: .5s ease-out;
 
-      &:hover {
-        box-shadow: 10px 10px 1px rgba(34, 181, 115, 0.7);
-        transition: box-shadow .5s ease-out;
-      }
-
-      a, :active, a:visited {
+      a, a:active, a:visited {
         font-size: medium;
         float: left;
-        color: color(secondary);
-        border: 1px solid color(secondary);
+        color: color(dark-secondary);
+        background-color: rgba(0, 0,0, 0.01);
+        box-shadow: -1px 1px 6px rgba(0, 0,0, 0.08);
         border-radius: 6px;
         text-decoration: none;
         text-transform: capitalize;
         margin:8px 5px 0px 0px;
-        padding: 4px;
+        padding: 5px;
         transition: .7s ease-out;
       }
 
       a:hover {
-        background-color: color(secondary);
+        background-color: color(dark-secondary);
         color: white;
         transition: background-color 1s ease-out;
       }
@@ -616,7 +614,7 @@ footer {
         padding: .7rem .3rem;
       }
 
-      a, &:visited, &:active {
+      a, a:visited, a:active {
         background-color: color(secondary);
         border-radius: 4px;
         padding: .6rem 1rem;
@@ -626,7 +624,7 @@ footer {
       a:hover {
         color: white;
         text-shadow: none;
-        background-color: lighten(color(secondary), 10%);
+        background-color: color(dark-secondary);
         transition: all .5s ease-in-out;
       }
     }
@@ -659,7 +657,7 @@ footer {
         }
 
         .fab:hover, .fas:hover {
-          background-color: lighten(color(secondary), 10%);
+          background-color: color(dark-secondary);
           transition: all .5s ease-in-out;
         }
       }
