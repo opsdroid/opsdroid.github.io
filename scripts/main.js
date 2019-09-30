@@ -89,7 +89,6 @@ collapseBtn.addEventListener('click', function(e){
             repo.real_name = repo.name.substring(10)
             connectors.push(repo)
           }
-          console.log(repo)
         });
 
         // Update page
