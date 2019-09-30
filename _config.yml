@@ -1,9 +1,9 @@
 # Site settings
-title: opsdroid | An open source python chat-ops bot
+title: opsdroid | An open source Python chat-ops bot
 description: > # this means to ignore newlines until "baseurl:"
-  An open source python chat-ops bot
+  An open source Python chat-ops bot
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "opsdroid.github.io" # the base hostname & protocol for your site
+url: "opsdroid.dev" # the base hostname & protocol for your site
 twitter_username: opsdroid
 github_username:  opsdroid
 dockerhub_username: opsdroid
