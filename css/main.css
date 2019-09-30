@@ -705,10 +705,6 @@ footer .top-footer .follow .social-icons .fab, footer .top-footer .follow .socia
   margin-right: .1rem;
 }
 
-footer .top-footer .follow .social-icons .fas {
-  padding: .5rem 1rem;
-}
-
 footer .top-footer .follow .social-icons .fab:hover, footer .top-footer .follow .social-icons .fas:hover {
   background-color: #22B573;
   -webkit-transition: all .5s ease-in-out;
