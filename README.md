@@ -51,4 +51,4 @@ Now you can just head over to `http://localhost:4000` and see your live version 
 
 Contributing to the opsdroid ecosystem is strongly encouraged and every little bit counts! We even send [sticker packs](https://medium.com/opsdroid/contributor-sticker-packs-738058ceda59) to our contributors to say thank you! 
 
-Do you need help? Do you want to chat? [Join our Gitter channel](https://gitter.im/opsdroid/)
+Do you need help? Do you want to chat? [Join our Gitter channel](https://riot.im/app/#/room/#opsdroid-general:matrix.org)
