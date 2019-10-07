@@ -44,6 +44,90 @@ Once you have the Jekyll Gem installed on your machine you can start your own ve
 ```shell
 jekyll serve
 ```
+### Docker Image
+
+```bash
+# Pull the container image
+$ docker pull opsdroid/opsdroid:latest
+
+# Run the container
+$ docker run --rm -it -v /path/to/config_folder:/root/.config/opsdroid opsdroid/opsdroid:latest
+```
+
+### Docker Service
+
+```bash
+# Create the opsdroid config file
+$ docker config create OpsdroidConfig /path/to/configuration.yaml
+
+# Create the service
+$ docker service create --name opsdroid --config source=OpsdroidConfig,target=/root/.config/opsdroid/configuration.yaml --mount 'type=volume,src=OpsdroidData,dst=/root/.config/opsdroid' opsdroid/opsdroid:latest
+```
+
+### Docker Swarm ###
+```bash
+# Create Directory Structure
+├── config
+│   ├── configuration.yaml
+└── docker-compose.yml
+```
+```yaml
+# docker-compose.yml
+version: "3.5"
+
+services:
+
+  opsdroid:
+    image: opsdroid/opsdroid:latest
+    networks:
+      - opsdroid
+    volumes:
+      -  opsdroid:/root/.config/opsdroid
+    configs:
+      -  source: opsdroid_conf
+         target: /root/.config/opsdroid/configuration.yaml
+    deploy:
+      restart_policy:
+        condition: any
+        delay: 10s
+        max_attempts: 20
+        window: 60s
+
+networks:
+  opsdroid:
+    driver: overlay
+
+configs:
+  opsdroid_conf:
+    file: ./config/configuration.yaml
+
+volumes:
+  opsdroid:
+```
+```bash
+# Deploy to swarm
+docker stack deploy --compose-file docker-compose.yml opsdroid
+```
+
+### Ubuntu 16.04 LTS
+
+```bash
+# Update apt-get
+$ sudo apt-get update
+
+# Install pip for Python 3 and locales
+$ sudo apt-get install python3-pip language-pack-en git
+
+# Ensure pip is up-to-date
+$ pip3 install --upgrade pip
+
+# Install opsdroid
+$ sudo pip3 install opsdroid
+
+# Run opsdroid
+$ opsdroid start
+```
+
 
 Now you can just head over to `http://localhost:4000` and see your live version of the website.
 
