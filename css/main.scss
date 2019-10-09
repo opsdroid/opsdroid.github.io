@@ -234,7 +234,7 @@ nav {
     // Left side of header
     .description {
       grid-area: "description";
-      margin-right: 1rem;
+      margin-right: 0;
     
       h1 {
         margin-bottom: 1em;
@@ -256,7 +256,7 @@ nav {
       }
     
       code {
-        margin: 2rem 3rem 0rem 3rem;
+        margin: 3rem auto;
         width: 65%;
         background-color: color(dark-primary);
         border-color: color(secondary);
@@ -264,7 +264,7 @@ nav {
         border-width: 1px;
         border-radius: 4px;
         font-size: 1.2rem;
-        display: inline-block;
+        display: table;
         padding: $padding;
     
         @include desktop {
