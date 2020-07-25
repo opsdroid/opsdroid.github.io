@@ -25,7 +25,7 @@
     var time = d.getHours() + ":" + pad(d.getMinutes(), 2);
     var profile = {"opsdroid": "https://github.com/opsdroid/style-guidelines/raw/master/logos/logo-dark.png",
                    "user": "https://www.gravatar.com/avatar/00000000000000000000000000000000?s=60&d=mm"};
-    return "<div id=\"" + id + "\" class=\"message " + user + "\"><img class=\"profile\" alt=\"avatar\" src=\"" + profile[user] + "\"><h4>" + user + " <small>" + time + "</small></h4><p>" + message + "</p></div>";
+    return "<div id=\"" + id + "\" class=\"message " + user + "\"><img class=\"profile\" alt=\"avatar\" src=\"" + profile[user] + "\"><p class=\"name\">" + user + " <small>" + time + "</small></p><p>" + message + "</p></div>";
   }
 
   function add_message(user, message, timeout){
