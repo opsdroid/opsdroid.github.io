@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway');
-
 // Set up variables
 $colors: (
   primary: #176587,
@@ -42,8 +40,9 @@ body, html {
 }
 
 body {
-  font-family: 'Raleway',Helvetica,Arial,sans-serif;
+  font-family: 'Raleway', sans-serif;
   margin: 0;
+  font-display: swap;
   
   p {
     text-align: center;
@@ -59,6 +58,7 @@ h1, h2 {
   color: color(secondary);
   font-weight: bold;
   font-family: 'Montserrat', sans-serif;
+  font-display: swap;
   margin: 0;
 }
 
@@ -641,22 +641,25 @@ footer {
       p {
         padding: .0rem .3rem .8rem;
       }
-      
+
       .social-icons {
-        
-        .fab, .fas {
+        display: flex;
+        justify-content: center;
+
+        @include desktop {
+          justify-content: start;
+        }
+      }
+      
+      .social-icon {
+          display: flex;
           color: white;
           background-color: color(secondary);
           padding: .5rem;
           border-radius: 4px;
-          margin-right: .1rem;
-        }
+          margin-right: .5rem;
 
-        .fas {
-          padding: .5rem 1rem;
-        }
-
-        .fab:hover, .fas:hover {
+        &:hover {
           background-color: color(dark-secondary);
           transition: all .5s ease-in-out;
         }
@@ -698,4 +701,8 @@ footer {
       grid-area: license;
     }
   }
+}
+
+.svg-inline--fa {
+  width: 30px;
 }

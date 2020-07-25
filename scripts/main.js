@@ -31,7 +31,7 @@ collapseBtn.addEventListener('click', function(e){
           if ( i < 3 ) {
             var item = response.items[i];
             blog_posts.append("<div class=\"blog-post\">"
-                              + "<a href=\"" + item.link + "\" target=\"_blank\">"
+                              + "<a href=\"" + item.link + "\" target=\"_blank\" rel=\"noopener\" rel=\"noreferrer\">"
                                 + "<p class=\"date\">" + item.pubDate.slice(0,10) + "</p>"
                                 + "<p class=\"link\">"
                                     + item.title

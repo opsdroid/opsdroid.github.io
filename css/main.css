@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway");
 body, html {
   background-color: #F8F8F8;
   -webkit-font-smoothing: antialiased;
@@ -11,8 +10,9 @@ body, html {
 }
 
 body {
-  font-family: 'Raleway',Helvetica,Arial,sans-serif;
+  font-family: 'Raleway', sans-serif;
   margin: 0;
+  font-display: swap;
 }
 
 body p {
@@ -31,6 +31,7 @@ h1, h2 {
   color: #30D48B;
   font-weight: bold;
   font-family: 'Montserrat', sans-serif;
+  font-display: swap;
   margin: 0;
 }
 
@@ -244,7 +245,7 @@ nav .navigation li a:hover {
 
 .header .header-container .description {
   grid-area: "description";
-  margin-right: 1rem;
+  margin-right: 0;
 }
 
 .header .header-container .description h1 {
@@ -270,7 +271,7 @@ nav .navigation li a:hover {
 }
 
 .header .header-container .description code {
-  margin: 2rem 3rem 0rem 3rem;
+  margin: 3rem auto;
   width: 65%;
   background-color: #185570;
   border-color: #30D48B;
@@ -278,7 +279,7 @@ nav .navigation li a:hover {
   border-width: 1px;
   border-radius: 4px;
   font-size: 1.2rem;
-  display: inline-block;
+  display: table;
   padding: 20px;
 }
 
@@ -697,15 +698,35 @@ footer .top-footer .follow p {
   padding: .0rem .3rem .8rem;
 }
 
-footer .top-footer .follow .social-icons .fab, footer .top-footer .follow .social-icons .fas {
+footer .top-footer .follow .social-icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media (min-width: 920px) {
+  footer .top-footer .follow .social-icons {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+  }
+}
+
+footer .top-footer .follow .social-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   color: white;
   background-color: #30D48B;
   padding: .5rem;
   border-radius: 4px;
-  margin-right: .1rem;
+  margin-right: .5rem;
 }
 
-footer .top-footer .follow .social-icons .fab:hover, footer .top-footer .follow .social-icons .fas:hover {
+footer .top-footer .follow .social-icon:hover {
   background-color: #22B573;
   -webkit-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
@@ -751,5 +772,9 @@ footer .bottom-footer .license {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: license;
+}
+
+.svg-inline--fa {
+  width: 30px;
 }
 /*# sourceMappingURL=main.css.map */
