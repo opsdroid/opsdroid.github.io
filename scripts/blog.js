@@ -1,3 +1,5 @@
+// This script is used in main.js - it's here for maintainability proposes
+
 (function(){ //begin script
 
   $(document).ready(function() {
@@ -21,7 +23,7 @@
             blog_posts.append("<div class=\"blog-post\">"
                               + "<p class=\"date\">" + item.pubDate.slice(0,10) + "</p>"
                               + "<p class=\"link\">"
-                                + "<a href=\"" + item.link + "\" target=\"_blank\">"
+                                + "<a href=\"" + item.link + "\" target=\"_blank\" rel=\"noopener\" rel=\"noreferrer\">"
                                   + item.title
                                 + "</a>"
                               + "</p>"

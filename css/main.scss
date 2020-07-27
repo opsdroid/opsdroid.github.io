@@ -1,14 +1,15 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway');
-
 // Set up variables
 $colors: (
   primary: #176587,
   secondary: #30D48B,
+  secondary-heading: #3cf9a5,
+  light-secondary: #87ffca,
+  button-bg: #30d48b4a,
   dark-primary: #185570,
   dark-secondary: #22B573,
 
   text-color: #333333,
-  text-light: #777777,
+  text-light: #545454,
 
   background-color: #F8F8F8,
   grey-color: #F1F1F1,
@@ -42,8 +43,9 @@ body, html {
 }
 
 body {
-  font-family: 'Raleway',Helvetica,Arial,sans-serif;
+  font-family: 'Raleway', sans-serif;
   margin: 0;
+  font-display: swap;
   
   p {
     text-align: center;
@@ -56,9 +58,10 @@ body {
 
 h1, h2 {
   text-align: center;
-  color: color(secondary);
+  color: color(secondary-heading);
   font-weight: bold;
   font-family: 'Montserrat', sans-serif;
+  font-display: swap;
   margin: 0;
 }
 
@@ -341,14 +344,16 @@ nav {
           border-radius: 3px;
         }
   
-        h4 {
+        .name {
           margin: 0;
           margin-bottom: 5px;
           font-size: 16px;
+          font-weight: bold;
   
           small {
-            color: #777;
+            color: color(text-light);
             font-size: 10px;
+            
           }
         }
   
@@ -370,7 +375,7 @@ nav {
   
       .typing {
         font-size: 12px;
-        color: #777;
+        color: color(text-light);
         margin: 10px;
       }
     }
@@ -457,7 +462,7 @@ nav {
     }
 
     h2 {
-      color: color(dark-secondary);
+      color: color(primary);
     }
 
 
@@ -486,9 +491,10 @@ nav {
       a, a:active, a:visited {
         font-size: medium;
         float: left;
-        color: color(dark-secondary);
-        background-color: rgba(0, 0,0, 0.01);
+        color: color(text-color);
+        background-color: color(button-bg);
         box-shadow: -1px 1px 6px rgba(0, 0,0, 0.08);
+        border: 1px solid color(secondary);
         border-radius: 6px;
         text-decoration: none;
         text-transform: capitalize;
@@ -546,23 +552,17 @@ footer {
   .top-footer {
     background-color: color(primary);
     clip-path: polygon(0 18%, 100% 5%, 100% 100%, 0 100%);
-    padding: 9rem 0rem 6rem;
-    display: grid;
-    grid-template-areas:
-    "blog"
-    "app"
-    "follow";
+    padding: 9rem 4rem 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 
     @include desktop {
-      grid-template-areas: 
-      "blog . app" 
-      "blog . follow";
-      grid-template-columns: repeat(3, 1fr);
-      padding-left: 4rem;
+      flex-direction: row;
     }
 
+
     .blog-posts {
-      grid-area: blog;
 
       padding: 3rem 1rem;
 
@@ -583,7 +583,7 @@ footer {
       }
 
       .date {
-        color: lighten(color(secondary), 5%);
+        color: color(light-secondary);
         text-shadow: 0px 0px 3px rgba(0, 0,0, 0.4);
         padding-top: .5rem;
         transition: color 0.5s ease-out;
@@ -592,7 +592,7 @@ footer {
       .blog-post:hover {
 
         .date {
-          color: lighten(color(secondary), 20%);
+          color: color(light-secondary);
           transition: color 0.5s ease-out;
         }
 
@@ -600,38 +600,8 @@ footer {
 
     }
 
-    .download {
-      grid-area: app;
-      margin-bottom: 2rem;
-
-      padding: 1rem;
-
-      @include desktop {
-        padding: 0rem;
-      }
-
-      p {
-        padding: .7rem .3rem;
-      }
-
-      a, a:visited, a:active {
-        background-color: color(secondary);
-        border-radius: 4px;
-        padding: .6rem 1rem;
-        transition: all .5s ease-in-out;
-      }
-
-      a:hover {
-        color: white;
-        text-shadow: none;
-        background-color: color(dark-secondary);
-        transition: all .5s ease-in-out;
-      }
-    }
 
     .follow {
-      grid-area: follow;
-
       padding: 1rem;
 
       @include desktop {
@@ -641,22 +611,25 @@ footer {
       p {
         padding: .0rem .3rem .8rem;
       }
-      
+
       .social-icons {
-        
-        .fab, .fas {
+        display: flex;
+        justify-content: center;
+
+        @include desktop {
+          justify-content: start;
+        }
+      }
+      
+      .social-icon {
+          display: flex;
           color: white;
           background-color: color(secondary);
           padding: .5rem;
           border-radius: 4px;
-          margin-right: .1rem;
-        }
+          margin-right: .5rem;
 
-        .fas {
-          padding: .5rem 1rem;
-        }
-
-        .fab:hover, .fas:hover {
+        &:hover {
           background-color: color(dark-secondary);
           transition: all .5s ease-in-out;
         }
@@ -690,7 +663,13 @@ footer {
         padding-bottom: 0rem;
       }
       a {
-        padding: 0rem .3rem;
+        margin: .5rem;
+        line-height: 2;
+        @include desktop {
+          line-height: inherit;
+          margin: 0rem .5rem;
+        }
+        
       }
     }
 
@@ -698,4 +677,8 @@ footer {
       grid-area: license;
     }
   }
+}
+
+.svg-inline--fa {
+  width: 30px;
 }

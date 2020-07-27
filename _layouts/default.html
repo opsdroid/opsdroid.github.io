@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
   {% include head.html %}
 
@@ -12,14 +12,17 @@
     {% include footer.html %}
 
     <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.1.0.min.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js" crossorigin="anonymous"></script>
 
-    <script src="/scripts/main.js"></script>
+    <script async rel="preconnect" src="{{ "/scripts/main.min.js" }}?{{ site.time | date: '%s%N' }}"></script>
     <!-- Chat for homepage -->
-    <script src="/scripts/chat.js"></script>
+    <script async rel="preconnect" src="{{ "/scripts/chat.js" }}?{{ site.time | date: '%s%N' }}"></script>
 
     <!-- GitHub Buttons https://buttons.github.io/. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    <!-- Google Fonts-->
+    <link async rel="preconnect" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Raleway:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
     <!-- Google Analytics -->
     <script>
