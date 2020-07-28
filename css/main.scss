@@ -615,6 +615,7 @@ footer {
       .social-icons {
         display: flex;
         justify-content: center;
+        max-height: 50px;
 
         @include desktop {
           justify-content: start;
