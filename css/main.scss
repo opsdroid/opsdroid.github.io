@@ -35,7 +35,7 @@ $desktop: 920px;
 }
 
 body, html {
-  background-color: color(background-color);
+   background: linear-gradient(to right, #d3cce3, #e9e4f0);
   -webkit-font-smoothing: antialiased;
   @include desktop {
     height: 100%;
