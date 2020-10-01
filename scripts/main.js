@@ -81,22 +81,10 @@ collapseBtn.addEventListener('click', function(e){
             repo.real_name = repo.name.substring(6)
             skills.push(repo)
           }
-          if (repo.name.search("database-") == 0) {
-            repo.real_name = repo.name.substring(9)
-            databases.push(repo)
-          }
-          if (repo.name.search("connector-") == 0) {
-            repo.real_name = repo.name.substring(10)
-            connectors.push(repo)
-          }
         });
 
         // Update page
-        append_modules(sortByKey(connectors, "stargazers_count"), "#connectors")
-        append_modules(sortByKey(databases, "stargazers_count"), "#databases")
         append_modules(sortByKey(skills, "stargazers_count"), "#skills")
-
-
       });
 
     }
