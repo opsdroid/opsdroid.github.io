@@ -25,6 +25,12 @@ Once you have Ruby and all the other dependencies installed, you can run the fol
 gem install bundler jekyll
 ```
 
+You will also need to add Webrick gem if you are using Ruby versions greater than (3.0.0) for starting local server.
+
+```ruby
+gem install webrick
+```
+
 ## Quick start
 
 To contribute to the site, you need to fork this repository, then clone it into your machine by running the command:
