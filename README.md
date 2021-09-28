@@ -22,7 +22,7 @@ If you need help installing Ruby on your machine, check the official [Jekyll pag
 Once you have Ruby and all the other dependencies installed, you can run the following command from your command line to install the Jekyll Gem and WeBrick Gem.
 
 ```ruby
-gem install bundler jekyll && gem install webrick
+gem install bundler jekyll webrick
 ```
 ## Quick start
 
