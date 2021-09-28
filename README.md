@@ -19,12 +19,11 @@ To contribute to the [opsdroid](https://opsdroid.github.io) website, first, you 
 
 If you need help installing Ruby on your machine, check the official [Jekyll page](https://jekyllrb.com/docs/installation/).
 
-Once you have Ruby and all the other dependencies installed, you can run the following command from your command line to install the Jekyll Gem.
+Once you have Ruby and all the other dependencies installed, you can run the following command from your command line to install the Jekyll Gem and WeBrick Gem.
 
 ```ruby
-gem install bundler jekyll
+gem install bundler jekyll webrick
 ```
-
 ## Quick start
 
 To contribute to the site, you need to fork this repository, then clone it into your machine by running the command:
