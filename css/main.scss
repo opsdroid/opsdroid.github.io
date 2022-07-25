@@ -257,7 +257,7 @@ nav {
       }
     
       code > div::before {
-        color: color(secondary);
+        color: lighten(color(dark-primary), 15%);
         content: "$ ";
       }
     
@@ -274,7 +274,7 @@ nav {
         padding: $padding;
 
         span.command {
-          color: #ffa500;
+          color: color(secondary);
         }
 
         @include desktop {
